@@ -1,0 +1,13 @@
+{
+  "name": "acf/vendors",
+  "title": "Vendors",
+  "description": "A custom vendors block.",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["vendors", "quote"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "align": "full"
+}
