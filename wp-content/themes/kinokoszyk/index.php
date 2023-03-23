@@ -2,8 +2,8 @@
 
 
 
+<p>am i here?</p>
 
 
 
-
-<?php get_footer();  ?> 
+<?php get_footer();  ?>
