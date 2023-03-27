@@ -19,12 +19,11 @@
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
     <div class="lg:h-12 flex flex-row space-x- justify-between w-full border-solid border-b-4 border-slate-50  lg:max-w-screen-md items-baseline">
-        <div class="flex flex-row justify-center items-baseline gap-x-[20px]">
-            <a href="<?= site_url(); ?>"><img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
-            </a>
+        <a class="flex flex-row justify-center items-baseline gap-x-[20px]" href="<?= site_url(); ?>">
+            <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1>Kino Koszyk</h1>
-        </div>
-        <div class="space-y-2" id="hamburger-menu">
+        </a>
+        <div class="space-y-2 lg:hidden" id="hamburger-menu">
             <div class="w-8 h-0.5 bg-gray-600"></div>
             <div class="w-8 h-0.5 bg-gray-600"></div>
             <div class="w-8 h-0.5 bg-gray-600"></div>
@@ -33,7 +32,7 @@
 
     <nav class="">
         <div>
-            <div class="flex">
+            <div class="flex space-x-4">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                     <?php foreach ($menuItems as $item) : ?>
