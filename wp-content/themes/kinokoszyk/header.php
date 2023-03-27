@@ -11,20 +11,16 @@
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>./js/script.js"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:wght@500&family=Oi&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:wght@500&family=Oi&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-stone-900 flex flex-col items-center mx-3 sm:mx-8 h-screen text-slate-50">
     <?php wp_body_open(); ?>
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
-    <div
-        class="lg:h-12 flex flex-row space-x- justify-between w-full border-solid border-b-4 border-slate-50  lg:max-w-screen-md items-baseline">
+    <div class="lg:h-12 flex flex-row space-x- justify-between w-full border-solid border-b-4 border-slate-50  lg:max-w-screen-md items-baseline">
         <div class="flex flex-row justify-center items-baseline gap-x-[20px]">
-            <a href="<?= site_url(); ?>"><img class="h-[20px] w-auto lg:h-[36px]"
-                    src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
+            <a href="<?= site_url(); ?>"><img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             </a>
             <h1>Kino Koszyk</h1>
         </div>
@@ -40,25 +36,15 @@
             <div class="flex">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
-<<<<<<< HEAD
-                <?php foreach ($menuItems as $item) : ?> <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
-                    class="<?= $currentPageId == $item->object_id ? ' ' : 'hidden'; ?>">
-                    <?= $item->title; ?>
-                </a>
-                <?php endforeach ?>
-                <?php foreach ($menuItems as $item) : ?>
-                <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
-                    class="<?= $currentPageId == $item->object_id ? 'underline' : 'hidden lg:visible'; ?>">
-                    <?= $item->title; ?>
-                </a>
-                <?php endforeach ?>
-=======
-                    <?php foreach ($menuItems as $item) : ?>
-                        <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? 'underline' : 'invisible lg:visible'; ?>">
+                    <?php foreach ($menuItems as $item) : ?> <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? ' ' : 'hidden'; ?>">
                             <?= $item->title; ?>
                         </a>
                     <?php endforeach ?>
->>>>>>> 5a7bb73252e0a7a86daff7b0988b6021b31dde6c
+                    <?php foreach ($menuItems as $item) : ?>
+                        <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? 'underline' : 'hidden lg:inline-block'; ?>">
+                            <?= $item->title; ?>
+                        </a>
+                    <?php endforeach ?>
                 <?php endif ?>
             </div>
         </div>
