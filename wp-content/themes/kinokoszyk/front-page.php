@@ -3,7 +3,7 @@
 
 
 
-<p>Hello world</p>
+<p>Hello world im the front page</p>
 
 
 <?php get_footer();  ?>

@@ -25,12 +25,57 @@ function register_theme_menus()
 }
 add_action('init', 'register_theme_menus');
 
+add_action(
+    'init',
+    function () {
+        register_block_type(__DIR__ . '/blocks/collaborators');
+        register_block_type(__DIR__ . '/blocks/explore-books');
+        register_block_type(__DIR__ . '/blocks/explore-movies');
+        register_block_type(__DIR__ . '/blocks/explore-photos');
+        register_block_type(__DIR__ . '/blocks/lets-talk');
+    }
+);
+
+add_action(
+    'init',
+    function () {
+        register_post_type('photo', array(
+            'labels' => array(
+                'name' => __('Photo')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'menu_icon' => 'dashicons-camera'
+        ));
+        register_post_type('book', array(
+            'labels' => array(
+                'name' => __('Book')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'menu_icon' => 'dashicons-book'
+        ));
+        register_post_type('movie', array(
+            'labels' => array(
+                'name' => __('Movie')
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'menu_icon' => 'dashicons-video-alt'
+        ));
+    }
+);
+
 function print_a($data)
 {
 ?>
-    <pre>
-        <code><?php print_r($data) ?></code>
-    </pre>
+    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden"><code><?php print_r($data); ?></code></pre>
 <?php
 }
 

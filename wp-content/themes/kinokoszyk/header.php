@@ -40,6 +40,7 @@
             <div class="flex">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
+<<<<<<< HEAD
                 <?php foreach ($menuItems as $item) : ?> <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
                     class="<?= $currentPageId == $item->object_id ? ' ' : 'hidden'; ?>">
                     <?= $item->title; ?>
@@ -51,6 +52,13 @@
                     <?= $item->title; ?>
                 </a>
                 <?php endforeach ?>
+=======
+                    <?php foreach ($menuItems as $item) : ?>
+                        <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? 'underline' : 'invisible lg:visible'; ?>">
+                            <?= $item->title; ?>
+                        </a>
+                    <?php endforeach ?>
+>>>>>>> 5a7bb73252e0a7a86daff7b0988b6021b31dde6c
                 <?php endif ?>
             </div>
         </div>
