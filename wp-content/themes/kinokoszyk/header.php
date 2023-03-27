@@ -36,10 +36,6 @@
             <div class="flex">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
-                    <?php foreach ($menuItems as $item) : ?> <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? ' ' : 'hidden'; ?>">
-                            <?= $item->title; ?>
-                        </a>
-                    <?php endforeach ?>
                     <?php foreach ($menuItems as $item) : ?>
                         <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? 'underline' : 'hidden lg:inline-block'; ?>">
                             <?= $item->title; ?>
