@@ -27,7 +27,7 @@
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                     <?php foreach ($menuItems as $item) : ?>
-                        <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? ' ' : 'hidden'; ?>">
+                        <a title="<?= $item->title ?>" href="<?= $item->url; ?>" class="<?= $currentPageId == $item->object_id ? 'underline' : 'hidden lg:visible'; ?>">
                             <?= $item->title; ?>
                         </a>
                     <?php endforeach ?>
