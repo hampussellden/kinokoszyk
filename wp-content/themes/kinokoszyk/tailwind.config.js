@@ -1,4 +1,4 @@
-module.exports = {
+tailwind.config = {
   theme: {
     colors: {
       transparent: "transparent",

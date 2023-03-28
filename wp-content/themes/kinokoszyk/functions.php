@@ -5,16 +5,22 @@ function enqueue_scripts()
     wp_enqueue_script('tailwind', 'https://cdn.tailwindcss.com', array(), null, false);
     // Load tailwind.config.js after tailwind has been loaded
     wp_enqueue_script('tailwind-config', get_template_directory_uri() . '/tailwind.config.js', array('tailwind'), null, false);
+    // wp_enqueue_script('script.js', get_stylesheet_directory_uri() . '/js/script.js');
+    //Register theme support
 }
+function javascript_scripts()
+{
+    wp_enqueue_script('script.js', (get_template_directory_uri() . '/js/script.js'), true, false);
+}
+
 add_action('enqueue_block_editor_assets', 'enqueue_scripts');
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
-//Register theme support
+
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
     add_theme_support('menus');
     add_theme_support('post-thumbnails');
 });
-
 //register theme menus
 function register_theme_menus()
 {
@@ -75,9 +81,11 @@ add_action(
 function print_a($data)
 {
 ?>
-    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden"><code><?php print_r($data); ?></code></pre>
-<?php
-}
+< pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
+    < code> <?php print_r($data); ?> < /code>
+            </pre>
+            <?php
+        }
 
 //example of creating a new post type
 /* 
