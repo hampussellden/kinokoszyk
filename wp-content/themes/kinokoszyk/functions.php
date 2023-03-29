@@ -81,22 +81,6 @@ add_action(
 function print_a($data)
 {
 ?>
-< pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
-    < code> <?php print_r($data); ?> < /code>
-            </pre>
-            <?php
-        }
-
-//example of creating a new post type
-/* 
-add_action('init', function() {
-    register_post_type('movie', array(
-        'labels' => array(
-            'name' => __('Movie'),
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-video-alt',
-    ));
-}); 
-*/
+    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden"><code><?php print_r($data); ?></code></pre>
+<?php
+}
