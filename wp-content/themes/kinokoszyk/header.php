@@ -17,11 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:wght@500&family=Oi&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-stone-900 flex flex-col items-center mx-3 sm:mx-8 h-screen text-slate-50">
+<body class="bg-kinoblack flex flex-col items-center mx-3 sm:mx-8 h-screen text-white">
     <?php wp_body_open(); ?>
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
-    <div class="lg:h-12 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-slate-50  lg:max-w-screen-md items-baseline">
+    <div class="lg:h-12 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-kinowhite lg:max-w-screen-md items-baseline">
         <a class="flex flex-row justify-center items-baseline gap-x-[20px]" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1>Kino Koszyk</h1>
