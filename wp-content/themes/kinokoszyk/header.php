@@ -10,7 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com/dist/tailwind.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:wght@500&family=Oi&display=swap" rel="stylesheet">
 </head>
 
@@ -18,7 +21,7 @@
     <?php wp_body_open(); ?>
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
-    <div class="lg:h-12 flex flex-row space-x- justify-between w-full border-solid border-b-4 border-slate-50  lg:max-w-screen-md items-baseline">
+    <div class="lg:h-12 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-slate-50  lg:max-w-screen-md items-baseline">
         <a class="flex flex-row justify-center items-baseline gap-x-[20px]" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1>Kino Koszyk</h1>
@@ -45,4 +48,3 @@
         </div>
 
     </nav>
-</body>
