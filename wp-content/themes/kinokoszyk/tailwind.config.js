@@ -14,5 +14,11 @@ tailwind.config = {
       kinowhite: "#FCFBF9",
       white: "#ffffff",
     },
+    extend: {
+      maxWidth: {
+        "1/2": "50%",
+        "1/3": "33%",
+      },
+    },
   },
 };
