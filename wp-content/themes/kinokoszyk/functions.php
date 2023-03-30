@@ -11,17 +11,19 @@ function enqueue_scripts()
     //Register theme support
 }
 
-
 add_action('enqueue_block_editor_assets', 'enqueue_scripts');
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 
-function tutsplus_enqueue_custom_js()
+function kinoK_enqueue_custom_js()
 {
-    wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/scripts/custom.js', array('jquery'), false, true);
+    wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/scripts/scripts.js', null, null, true);
 }
 
-add_action('wp_enqueue_scripts', 'tutsplus_enqueue_custom_js');
+add_action('wp_enqueue_scripts', 'kinoK_enqueue_custom_js');
+
+
+
 
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
@@ -88,7 +90,6 @@ add_action(
 function print_a($data)
 {
 ?>
-<<<<<<< HEAD
 <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
     <code> <?php print_r($data); ?> </code>
             </pre>
@@ -108,8 +109,3 @@ add_action('init', function() {
     ));
 }); 
 */
-=======
-    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden"><code><?php print_r($data); ?></code></pre>
-<?php
-}
->>>>>>> 0c16eef0113ed76787bb41896fe9e85ca8822b30

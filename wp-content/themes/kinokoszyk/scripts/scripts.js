@@ -1,4 +1,4 @@
-console.log("hello");
+//console.log("hello");
 const hamburgerMenu = document.querySelector("#hamburger-menu");
 console.log(hamburgerMenu);
 
