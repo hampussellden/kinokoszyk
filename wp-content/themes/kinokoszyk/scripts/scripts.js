@@ -1,9 +1,10 @@
 //console.log("hello");
 const hamburgerMenu = document.querySelector("#hamburger-menu");
-console.log(hamburgerMenu);
-
-hamburgerMenu.addEventListener("click", toggleMenu());
+const hamburgerLines = hamburgerMenu.querySelectorAll("div");
+console.log(hamburgerLines);
 
 const toggleMenu = () => {
-  hamburgerMenu.classList.add("hidden");
+  hamburgerMenu.classList.toggle("active");
 };
+
+hamburgerMenu.addEventListener("click", toggleMenu);

@@ -34,16 +34,20 @@
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1>Kino Koszyk</h1>
         </a>
-        <div class="space-y-2 lg:hidden" id="hamburger-menu">
-            <div class="w-8 h-0.5 bg-kinowhite"></div>
-            <div class="w-8 h-0.5 bg-kinowhite"></div>
-            <div class="w-8 h-0.5 bg-kinowhite"></div>
+        <div class="space-y-2  lg:hidden group" id="hamburger-menu">
+            <div class="w-8 h-0.5 bg-kinowhite group-[.active]:rotate-45 group-[.active]:translate-y-[10px]"></div>
+            <div class="w-8 h-0.5 bg-kinowhite group-[.active]:opacity-0"></div>
+            <div class="w-8 h-0.5 bg-kinowhite group-[.active]:-rotate-45 group-[.active]:-translate-y-[10px]"></div>
         </div>
+
+
+
+
     </div>
 
     <nav class="">
         <div>
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 ">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                 <?php foreach ($menuItems as $item) : ?>
