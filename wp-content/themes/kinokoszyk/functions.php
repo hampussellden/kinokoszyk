@@ -114,20 +114,20 @@ add_action('init', function() {
 function the_breadcrumb()
 {
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-    $delimiter = '<span class="text-body font-light"> / </span>'; // delimiter between crumbs
+    $delimiter = '<span class="text-body font-light sm:text-lg lg:text-xl"> / </span>'; // delimiter between crumbs
     $home = 'Home'; // text for the 'Home' link
     $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-    $before = '<span class="current text-body font-light">'; // tag before the current crumb
+    $before = '<span class="current text-body font-light sm:text-lg lg:text-xl">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
 
     global $post;
     $homeLink = get_bloginfo('url');
     if (is_home() || is_front_page()) {
         if ($showOnHome == 1) {
-            echo '<div id="crumbs"><a text-body font-light href="' . $homeLink . '">' . $home . '</a></div>';
+            echo '<div id="crumbs"><a class="text-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '">' . $home . '</a></div>';
         }
     } else {
-        echo '<div class="flex flex-row gap-x-3" id="crumbs"><a class="text-body font-light" href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+        echo '<div class="flex flex-row gap-x-3 my-10 self-start" id="crumbs"><a class="text-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
         if (is_category()) {
             $thisCat = get_category(get_query_var('cat'), false);
             if ($thisCat->parent != 0) {
@@ -149,7 +149,7 @@ function the_breadcrumb()
             if (get_post_type() != 'post') {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
-                echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+                echo '<a class="text-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
                 if ($showCurrent == 1) {
                     echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
                 }
