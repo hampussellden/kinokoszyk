@@ -34,10 +34,25 @@
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1>Kino Koszyk</h1>
         </a>
+        <!-- hamburger bar -->
         <div class="space-y-2  lg:hidden group" id="hamburger-menu">
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:rotate-45 group-[.active]:translate-y-[10px]"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:opacity-0"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:-rotate-45 group-[.active]:-translate-y-[10px]"></div>
+            <!-- meny -->
+            <div class="bg-yellow-500 w-[100vw] left-[-100%] lg:hidden group drop-down">
+                <div class="flex flex-col pt-[100px] group-[.active]:bg-kinogrey hidden group-[.active]:flex ">
+                    <?php $currentPageId = get_queried_object_id(); ?>
+                    <?php if ($menuItems) : ?>
+                    <?php foreach ($menuItems as $item) : ?>
+                    <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
+                        class="<?= $currentPageId == $item->object_id ? 'underline' : ' lg:inline-block'; ?>">
+                        <?= $item->title; ?>
+                    </a>
+                    <?php endforeach ?>
+                    <?php endif ?>
+                </div>
+            </div>
         </div>
 
 
@@ -45,7 +60,7 @@
 
     </div>
 
-    <nav class="">
+    <nav class="left-0 w-[100vw]">
         <div>
             <div class="flex space-x-4 ">
                 <?php $currentPageId = get_queried_object_id(); ?>
