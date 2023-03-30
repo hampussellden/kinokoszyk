@@ -35,6 +35,7 @@ function register_theme_menus()
 {
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu'),
+        'secondary-menu' => __('Secondary Menu'),
         'footer-menu' => __('Footer Menu'),
     ));
 }
@@ -90,7 +91,7 @@ add_action(
 function print_a($data)
 {
 ?>
-<pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
+    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
     <code> <?php print_r($data); ?> </code>
             </pre>
 <?php
