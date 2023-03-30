@@ -1,16 +1,14 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()) : ?>
-    <!-- Product Grid -->
-    <div class="grid grid-cols-3 gap-4 p-8 max-w-7xl mx-auto">
-        <?php while (have_posts()) : the_post() ?>
-            <?php get_template_part('parts/shared/books') ?>
-        <?php endwhile; ?>
-        <!-- EOF: Product Grid -->
-    </div>
-<?php endif; ?>
-
-
-<h1>here are books</h1>
+<main class="flex flex-col">
+    <?php if (have_posts()) : ?>
+        <h2 class="font-display text-5xl sm:text-8xl lg:text-9xl flex-start">Books</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 ">
+            <?php while (have_posts()) : the_post() ?>
+                <?php get_template_part('parts/shared/books') ?>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+</main>
 
 <?php get_footer(); ?>

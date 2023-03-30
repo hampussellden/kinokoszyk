@@ -1,0 +1,13 @@
+{
+    "name": "acf/explore-photos",
+    "title": "Explore Photos",
+    "description": "A custom block showcasing photos.",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["explore", "photos", "quote"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block.php"
+    },
+    "align": "full"
+}

@@ -88,6 +88,7 @@ add_action(
 function print_a($data)
 {
 ?>
+<<<<<<< HEAD
 <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
     <code> <?php print_r($data); ?> </code>
             </pre>
@@ -107,3 +108,8 @@ add_action('init', function() {
     ));
 }); 
 */
+=======
+    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden"><code><?php print_r($data); ?></code></pre>
+<?php
+}
+>>>>>>> 0c16eef0113ed76787bb41896fe9e85ca8822b30
