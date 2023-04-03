@@ -1,11 +1,11 @@
-<section class="w-screen">
-    <h2 class="font-serif text-white pl-5 py-5 text-5xl md:pl-10 lg:pl-20">Let's talk</h2>
+<section class="w-screen font-body">
+    <h2 class="font-display text-white pl-5 py-5 text-5xl md:text-8xl md:pl-10 lg:pl-20 lg:text-9xl">Let's talk</h2>
     <section class="pt-5 pb-8 px-5 bg-kinogrey md:px-10 md:pt-10 md:pb-14 lg:py-20 lg:pl-20">
         <div class="pb-5 gap-7 lg:pb-10">
-            <h3 class="pb-4 font-bold text-xs text-kinoblack md:text-sm">You can now easily reach us by mail</h3> <!-- kinoblack -->
-            <p class="text-xs text-kinodeepblack font-light md:text-sm">While waiting for an answer, why not read some of our news articles?</p> <!-- kinodeepblack -->
+            <h3 class="pb-4 font-bold text-xs text-kinoblack md:text-xl">You can now easily reach us by mail</h3>
+            <p class="text-xs text-kinodeepblack font-light md:text-xl">While waiting for an answer, why not read some of our news articles?</p>
         </div>
-        <div class="flex gap-7">
+        <div class="flex gap-7 md:gap-10 lg:gap-20">
             <a class="text-kinored">
                 <button class="rounded-sm box-content text-sm px-5 py-3 border-solid box-border outline-none md:text-2xl md:py-1 md:px-8" style="box-shadow: inset 0 0 0 2px #751010;">
                     Articles
@@ -19,7 +19,5 @@
                 </button>
             </a>
         </div>
-
-
     </section>
 </section>
