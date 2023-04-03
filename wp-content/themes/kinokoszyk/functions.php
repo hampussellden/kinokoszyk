@@ -124,10 +124,10 @@ function the_breadcrumb()
     $homeLink = get_bloginfo('url');
     if (is_home() || is_front_page()) {
         if ($showOnHome == 1) {
-            echo '<div id="crumbs"><a class="text-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '">' . $home . '</a></div>';
+            echo '<div id="crumbs"><a class="text-body font-light sm:text-lg lg:text-xl " href="' . $homeLink . '">' . $home . '</a></div>';
         }
     } else {
-        echo '<div class="flex flex-row gap-x-3 my-10 self-start" id="crumbs"><a class="text-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+        echo '<div class="flex flex-row gap-x-2.5 lg:gap-x-3 self-start py-4 px-5 sm:py-5 sm:px-10 lg:py-10 px-20" id="crumbs"><a class="text-body font-light sm:text-lg lg:text-xl " href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
         if (is_category()) {
             $thisCat = get_category(get_query_var('cat'), false);
             if ($thisCat->parent != 0) {
