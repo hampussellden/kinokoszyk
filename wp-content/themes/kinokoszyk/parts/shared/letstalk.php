@@ -11,7 +11,7 @@
                     Articles
                 </button>
             </a>
-            <a href="home" class="text-kinowhite">
+            <a href="contact" class="text-kinowhite">
                 <button class="group flex gap-x-4 justify-center items-center text-kinowhite rounded-sm text-sm pl-5 pr-7 py-3 bg-kinored md:py-1 md:px-8 md:text-2xl hover:bg-kinowhite hover:text-kinored">
                     Contact us
                     <svg class="fill-current h-4 md:hidden" viewBox="0 0 9 16" xmlns="http://www.w3.org/2000/svg">
