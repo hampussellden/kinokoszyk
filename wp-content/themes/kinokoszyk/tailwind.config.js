@@ -13,6 +13,7 @@ tailwind.config = {
       kinored: "#751010",
       kinowhite: "#FCFBF9",
       white: "#ffffff",
+      black: "#000000",
     },
     extend: {
       maxWidth: {
