@@ -24,55 +24,44 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-kinoblack flex flex-col items-center mx-3 sm:mx-8 h-screen text-white">
+<body class="bg-kinoblack flex flex-col items-center h-screen text-white relative pt-10">
     <?php wp_body_open(); ?>
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
     <div
-        class="lg:h-12 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-kinowhite lg:max-w-screen-md items-baseline">
+        class="lg:h-12 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-kinowhite lg:max-w-screen-md items-baseline fixed top-0 bg-kinoblack">
         <a class="flex flex-row justify-center items-baseline gap-x-[20px]" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1>Kino Koszyk</h1>
         </a>
         <!-- hamburger bar -->
-        <div class="space-y-2  lg:hidden group" id="hamburger-menu">
+        <div class="space-y-2 z-50 lg:hidden group" id="hamburger-menu">
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:rotate-45 group-[.active]:translate-y-[10px]"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:opacity-0"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:-rotate-45 group-[.active]:-translate-y-[10px]"></div>
-            <!-- meny -->
-            <div class="bg-yellow-500 w-[100vw] left-[-100%] lg:hidden group drop-down">
-                <div class="flex flex-col pt-[100px] group-[.active]:bg-kinogrey hidden group-[.active]:flex ">
-                    <?php $currentPageId = get_queried_object_id(); ?>
-                    <?php if ($menuItems) : ?>
-                    <?php foreach ($menuItems as $item) : ?>
-                    <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
-                        class="<?= $currentPageId == $item->object_id ? 'underline' : ' lg:inline-block'; ?>">
-                        <?= $item->title; ?>
-                    </a>
-                    <?php endforeach ?>
-                    <?php endif ?>
-                </div>
-            </div>
+            <!-- Slideover meny -->
         </div>
-
-
-
-
     </div>
-
-    <nav class="left-0 w-[100vw]">
-        <div>
-            <div class="flex space-x-4 ">
+    <div id='navigation' class='group'>
+        <nav
+            class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300 lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
+            <div class="flex flex-col lg:flex-row items-center justify-center lg:space-x-4">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
-                <?php foreach ($menuItems as $item) : ?>
+                <?php foreach ($menuItems as $key => $item) : ?>
+                <?php if ($key === 0) : ?>
                 <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
-                    class="<?= $currentPageId == $item->object_id ? 'underline' : 'hidden lg:inline-block'; ?>">
+                    class="<?= $currentPageId == $item->object_id ? 'underline' : 'justify-self-end w-fit lg:inline-block'; ?>">
+                    <?= $item->title; ?>
+                </a>
+                <?php continue ?>
+                <?php endif ?>
+                <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
+                    class="<?= $currentPageId == $item->object_id ? 'underline' : 'w-fit lg:inline-block'; ?>">
                     <?= $item->title; ?>
                 </a>
                 <?php endforeach ?>
                 <?php endif ?>
             </div>
-        </div>
-
-    </nav>
+        </nav>
+    </div>
