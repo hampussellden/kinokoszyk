@@ -24,17 +24,17 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-kinoblack flex flex-col items-center h-screen text-white relative pt-10 group">
+<body class="bg-kinoblack flex flex-col items-center h-screen text-white relative pt-10 group font-body">
     <?php wp_body_open(); ?>
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
     <div
-        class="lg:h-12 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-kinowhite lg:max-w-screen-md items-baseline bg-kinoblack">
+        class="lg:h-24 flex flex-row lg:justify-center space-x- justify-between w-full border-solid border-b-4 border-kinowhite lg:max-w-screen-md items-baseline bg-kinoblack mb-4">
         <a class="flex flex-row justify-center items-baseline gap-x-[20px]" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
-            <h1>Kino Koszyk</h1>
+            <h1 class="font-display text-2xl lg:text-[42px] pb-[16px]">Kino Koszyk</h1>
         </a>
-        <div class="space-y-2 z-50 lg:hidden group-[.active]:fixed top-10 right-10" id="hamburger-menu">
+        <div class="mt-2.5 mr-2.5 space-y-2 z-50 lg:hidden group-[.active]:fixed top-10 right-0.5" id="hamburger-menu">
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:rotate-45 group-[.active]:translate-y-[10px]"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:opacity-0"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:-rotate-45 group-[.active]:-translate-y-[10px]"></div>
@@ -43,10 +43,11 @@
     </div>
     <!-- hamburger bar -->
 
-    <div id='navigation' class='group'>
+    <div id="navigation" class="group top-[266px]">
         <nav
-            class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300 lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
-            <div class="flex flex-col lg:flex-row items-center justify-center lg:space-x-4">
+            class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300  lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
+            <div
+                class="flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px]">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                 <?php foreach ($menuItems as $key => $item) : ?>
