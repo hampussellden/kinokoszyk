@@ -6,7 +6,7 @@
             <p class="text-xs text-kinodeepblack font-light md:text-xl">While waiting for an answer, why not read some of our news articles?</p>
         </div>
         <div class="flex gap-7 md:gap-10 lg:gap-20">
-            <a href="home" class="text-kinored">
+            <a href="news-2" class="text-kinored">
                 <button class="rounded-sm box-content text-sm px-5 py-3 border-solid box-border outline-none md:text-2xl md:py-1 md:px-8 hover:bg-kinowhite hover:text-kinored" style="box-shadow: inset 0 0 0 2px #751010;">
                     Articles
                 </button>
