@@ -1,16 +1,20 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()) : ?>
-    <!-- Product Grid -->
-    <div class="grid grid-cols-3 gap-4 p-8 max-w-7xl mx-auto">
-        <?php while (have_posts()) : the_post() ?>
-            <?php get_template_part('parts/shared/photos') ?>
-        <?php endwhile; ?>
-        <!-- EOF: Product Grid -->
+
+<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
+    <div class="px-1.5 sm:px-3 lg:px-5">
+        <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
-<?php endif; ?>
-
-
-<h1>here are books</h1>
+    <h2 class="font-display text-5xl sm:text-8xl lg:text-9xl lg:pb-10 pt-8 sm:pt-20">Photos</h2>
+    <?php if (have_posts()) : ?>
+        <div class="flex flex-row space-x-4 sppt-10 sm:pt-20">
+            <?php while (have_posts()) : the_post() ?>
+                <?php if (!get_field('joanna_helander')) :  ?>
+                    <?php get_template_part('parts/shared/photos') ?>
+                <?php endif ?>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+</main>
 
 <?php get_footer(); ?>
