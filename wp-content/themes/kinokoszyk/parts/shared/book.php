@@ -11,3 +11,20 @@ $image = get_field('image');
         </div>
     </div>
 </article>
+
+<!--
+//use consistant naming (lg:p32 -> lg:p-32)
+<article class="py-12 sm:py-20 lg:py-32">.
+
+
+//consider using an alt attribute on image tags.
+
+
+//maybe object contain for the image rather than cover.
+
+
+//the button probably does not need a pointer cursor.
+
+
+//perhaps use more sections rather than divs for accessibility.
+->
