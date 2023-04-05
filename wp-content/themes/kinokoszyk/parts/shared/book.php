@@ -7,7 +7,7 @@ $image = get_field('image');
     <div class="flex flex-col gap-x-11 lg:gap-x-20 gap-y-8 sm:flex-row">
         <div class="sm:max-w-1/2"><?php the_content(); ?></div>
         <div class="sm:max-w-1/2">
-            <img class="object-contain" src="<?php $image['url']; ?>" alt="">
+            <img class="object-contain" src="<?= $image['url']; ?>" alt="">
         </div>
     </div>
 </article>

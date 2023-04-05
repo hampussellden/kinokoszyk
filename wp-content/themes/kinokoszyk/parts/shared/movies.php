@@ -12,5 +12,5 @@ $image = get_field('image');
             <?php get_template_part('parts/shared/seemore-btn') ?>
         </a>
     </div>
-    <img class="w-[91.64%] sm:min-w-[52%] object-cover object-top" src="<?php $image['url']; ?>" alt="">
+    <img class="w-[91.64%] sm:min-w-[52%] object-cover object-top" src="<?= $image['url']; ?>" alt="">
 </article>
