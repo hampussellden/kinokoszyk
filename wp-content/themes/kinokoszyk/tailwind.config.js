@@ -50,5 +50,9 @@ tailwind.config = {
       widest: ".1em",
       widest: ".25em",
     },
+    lineHeight: {
+      headingOne: "42px",
+      links: "24px",
+    },
   },
 };

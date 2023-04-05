@@ -32,7 +32,8 @@
         class="lg:mb-4 flex flex-row lg:justify-center space-x- justify-between w-full lg:max-w-screen-md items-baseline bg-kinoblack">
         <a class="flex flex-row justify-center items-center gap-x-[20px]" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/jhlogo.svg" class="" />
-            <h1 class="font-display text-2xl lg:text-[42px] lg:leading-headingOne lg:font-bold -tracking-[2%]">Joanna
+            <h1 class="font-display text-2xl lg:text-[42px] lg:leading-headingOne lg:font-bold lg:tracking-tightest">
+                Joanna
                 Helander</h1>
         </a>
         <div class=" mt-2.5 mr-2.5 space-y-2 z-50 lg:hidden group-[.active]:fixed top-10 right-0.5" id="hamburger-menu">
@@ -48,7 +49,7 @@
         <nav
             class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300 lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
             <div
-                class="flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px] lg:pt-[29px]">
+                class="flex flex-col leading-link font-normal lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px] lg:pt-[29px]">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                 <?php foreach ($menuItems as $key => $item) : ?>
