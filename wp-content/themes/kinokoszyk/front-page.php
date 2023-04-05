@@ -13,12 +13,13 @@ $args = array(
 );
 $query = new WP_Query($args);
 if ($query->have_posts()) : ?>
-    <div class="">
+    <main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
             <?= the_title(); ?>
             <?= the_content(); ?>
         <?php endwhile; ?>
-    </div>
+        </div>
+    </main>
 <?php endif; ?>
 
 

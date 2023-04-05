@@ -16,7 +16,7 @@ $query = new WP_Query($args)
         <?php while ($query->have_posts()) : $query->the_post() ?>
             <a href="<?php the_permalink(); ?>">
                 <div class="relative w-full max-h-60 sm:max-h-[650px] lg:max-h-[750px] overflow-hidden">
-                    <img class="" src="<?= the_field('image') ?>" alt="">
+                    <img class="saturate-0" src="<?= the_field('image') ?>" alt="">
                     <h2 class="absolute bottom-4 left-5 sm:bottom-14 font-display text-4xl sm:text-[120px] lg:text-[140px]">
                         Books
                     </h2>
