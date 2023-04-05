@@ -50,5 +50,9 @@ tailwind.config = {
       wider: ".03em", //ls 3% h4 body-semi-bold
       widest: ".34em", //ls 34% styled h2 Joanna helander
     },
+    lineHeight: {
+      headingOne: "42px",
+      links: "24px",
+    },
   },
 };
