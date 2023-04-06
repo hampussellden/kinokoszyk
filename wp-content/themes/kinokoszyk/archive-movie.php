@@ -16,9 +16,10 @@ $query = new WP_Query($args)
             <a href="<?php the_permalink(); ?>">
                 <?php $image = get_field('image');
                 $srcset = wp_get_attachment_image_srcset($image['ID']);
+                $alt = $image['alt'];
                 ?>
                 <div class="relative max-h-60 sm:max-h-[650px] lg:max-h-[750px] overflow-hidden">
-                    <img class="object-cover" srcset="<?= $srcset; ?>" sizes="100vw" />
+                    <img class="saturate-0 brightness-50" srcset="<?= $srcset; ?>" alt="<?= $alt; ?>" sizes="100vw" />
                     <h2 class="absolute bottom-4 left-5 sm:bottom-14 font-display text-4xl sm:text-[120px] lg:text-[140px]">
                         Movies
                     </h2>
