@@ -1,21 +1,23 @@
+<?php get_header(); ?>
+
 <?php
-get_header();
 $args = array(
     "posts_per_page" => 1,
-    "orderby"        => "date",
-    "order"          => "DESC"
+    "orderby" => "date",
+    "order" => "DESC"
 );
 
 $query = new WP_Query($args);
 ?>
 
 <main class="w-full">
-    <h3 class="font-display text-5xl ml-5 mt-8 mb-8 lg:text-8xl lg:ml-10 lg:my-20">News</h3>
+    <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+    <h2 class="font-display text-5xl ml-5 mt-8 mb-8 lg:text-8xl lg:ml-10 lg:my-20">News</h2>
     <?php if ($query->have_posts()) : ?>
         <article class="bg-kinowhite mb-16 hidden lg:block relative">
-            <p class="absolute left-4 top-4">Latest news</p>
             <?php if (has_post_thumbnail()) : ?>
                 <img class="w-full max-h-[341px] object-cover" src="<?= esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                <p class="absolute left-4 top-4">Latest news</p>
             <?php endif; ?>
             <div class="text-kinodeepblack ml-10 mr-10 mt-10 pb-12">
                 <h3 class="font-display text-8xl text-kinodeepblack mb-5 mt-4"><?= the_title(); ?></h3>
@@ -45,6 +47,23 @@ $query = new WP_Query($args);
         endif;
         ?>
     </section>
+    <div class="flex justify-center gap-2 mt-10">
+        <?php
+
+        $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+
+        echo paginate_links(array(
+            'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+            'format' => '?paged=%#%',
+            'current' => $paged,
+            'prev_next' => true,
+            'prev_text' => __('Previous'),
+            'next_text' => __('Next'),
+            'before_page_number' => '<span class="underline">',
+            'after_page_number' => '</span>',
+        ));
+        ?>
+    </div>
 </main>
 
 <?php
