@@ -2,9 +2,9 @@
 $image = get_field('image');
 $srcset = wp_get_attachment_image_srcset($image['ID']);
 ?>
-<div class="flex flex-col max-h-64 sm:max-h-[692px] lg:max-h-752 max-w-1/2">
-    <div class="object-cover overflow-hidden">
-        <img srcset="<?= $srcset; ?>" sizes="33vw" />
+<div class="flex flex-col max-w-1/2 p-2 sm:p.2.5 lg:p-5">
+    <div class="overflow-hidden">
+        <img class="object-contain" srcset="<?= $srcset; ?>" sizes="100vw" loading="lazy" />
     </div>
     <div class="flex flex-row justify-center items-center py-2 bg-kinogrey rounded-b-sm">
         <h4 class="font-display text-black sm:text-4xl"><?php the_field('subject'); ?></h4>
