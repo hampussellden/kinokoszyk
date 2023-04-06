@@ -18,7 +18,7 @@ tailwind.config = {
     extend: {
       maxWidth: {
         "1/2": "50%",
-        "1/3": "33%",
+        "1/3": "33.333%",
         "1/20": "5%",
         "2/20": "10%",
         "3/20": "15%",
@@ -39,8 +39,8 @@ tailwind.config = {
         "18/20": "90%",
         "19/20": "95%",
       },
-      fontSize:{
-        "big": ["180px", "150px"],
+      fontSize: {
+        big: ["180px", "150px"],
       },
     },
     letterSpacing: {
