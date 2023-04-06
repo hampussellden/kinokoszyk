@@ -39,20 +39,24 @@ tailwind.config = {
         "18/20": "90%",
         "19/20": "95%",
       },
-      fontSize: {
-        big: ["180px", "150px"],
-      },
+    },
+    fontSize: {
+      big: ["180px", "150px"],
     },
     letterSpacing: {
-      tightest: "-.075em",
-      tighter: "-.05em",
-      tight: "-.025em",
+      tightest: "-.055em", //ls -5.5% h1
+      tighter: "-.04em", //ls -4% h2, h3, h4
+      tight: "-.02em", //ls -2% h1
+      small: "-0.01em", //ls -1% burger navlink
       normal: "0",
-      wide: ".025em",
-      wider: ".05em",
-      widest: ".1em",
-      widest: ".25em",
+      wide: ".01em", //ls 1% body-light
+      wider: ".03em", //ls 3% h4 body-semi-bold
+      widest: ".34em", //ls 34% styled h2 Joanna helander
       mega: "1.5rem",
+    },
+    lineHeight: {
+      headingOne: "42px",
+      links: "24px",
     },
   },
 };
