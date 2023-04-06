@@ -31,11 +31,11 @@ $query = new WP_Query($args)
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
     <?php if (have_posts()) : ?>
-        <div class="grid grid-cols-2 sm:grid-cols-3">
+        <section class="grid grid-cols-2 sm:grid-cols-3">
             <?php while (have_posts()) : the_post() ?>
                 <?php get_template_part('parts/shared/books') ?>
             <?php endwhile; ?>
-        </div>
+        </section>
     <?php endif; ?>
 </main>
 

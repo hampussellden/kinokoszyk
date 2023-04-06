@@ -1,5 +1,6 @@
 <?php
 $image = get_field('image');
+$srcset = wp_get_attachment_image_srcset($image['ID']);
 ?>
 
 <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto sm:flex-row sm:justify-center sm:items-center sm:gap-11 sm:border-t sm:py-[60px] lg:py-80px]">
@@ -12,5 +13,5 @@ $image = get_field('image');
             <?php get_template_part('parts/shared/seemore-btn') ?>
         </a>
     </div>
-    <img class="w-[91.64%] sm:min-w-[52%] object-cover object-top" src="<?= $image['url']; ?>" alt="">
+    <img class="w-[91.64%] sm:min-w-[52%] object-cover object-top" srcset="<?= $srcset; ?>" sizes="50vw" />
 </article>
