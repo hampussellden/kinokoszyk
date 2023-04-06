@@ -39,9 +39,9 @@ tailwind.config = {
         "18/20": "90%",
         "19/20": "95%",
       },
-    },
-    fontSize: {
-      big: ["180px", "150px"],
+      fontSize: {
+        big: ["180px", "150px"],
+      },
     },
     letterSpacing: {
       tightest: "-.055em", //ls -5.5% h1
