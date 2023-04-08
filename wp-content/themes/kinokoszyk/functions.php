@@ -49,6 +49,7 @@ add_action(
         register_block_type(__DIR__ . '/blocks/explore-movies');
         register_block_type(__DIR__ . '/blocks/explore-photos');
         register_block_type(__DIR__ . '/blocks/lets-talk');
+        register_block_type(__DIR__ . '/blocks/hero');
     }
 );
 
@@ -91,7 +92,7 @@ add_action(
 function print_a($data)
 {
 ?>
-    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
+<pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
     <code> <?php print_r($data); ?> </code>
             </pre>
 <?php
