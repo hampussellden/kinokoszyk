@@ -25,13 +25,21 @@ $argsAboutUs = array(
 
 $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
-<div class="flex flex-col relative">
+<div class="relative inline-block">
     <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
-    <?= the_content(); ?>
+    <div class="block w-full "><?= the_content(); ?></div>
     <?php endwhile; ?>
-    <h2 class="p-0 absolute order-1">KINOKOSZYK</h2>
+
+    <h2
+        class="lg:visible lg: absolute lg:bottom-0 lg:w-full lg:m-0 lg:leading-headingTwo lg:text-[250px] lg:tracking-tightest  lg:font-normal lg:font-display  ">
+        KINOKOSZYK</h2>
+
+    <h2
+        class="lg:invisible absolute bottom-0 w-full m-0 leading-headingTwo text-[250px] tracking-tightest  font-normal font-display ">
+        KINO KOSZYK</h2>
+
 </div>
-</div>
+
 <?php endif; ?>
 
 
@@ -43,7 +51,6 @@ if ($queryAboutUs->have_posts()) : ?>
     <?= the_title(); ?>
     <?= the_content(); ?>
     <?php endwhile; ?>
-    </div>
 </main>
 <?php endif; ?>
 

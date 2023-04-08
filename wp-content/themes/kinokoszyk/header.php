@@ -24,7 +24,7 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-kinoblack flex flex-col items-center h-screen text-white relative pt-10 group font-body">
+<body class="box-border bg-kinoblack flex flex-col items-center h-screen text-white relative pt-10 group font-body">
     <?php wp_body_open(); ?>
     <?php $menuItems =  wp_get_nav_menu_items('primary-menu'); ?>
 
@@ -57,7 +57,7 @@
 
                 <?php if ($item->title === "Joanna Helander") : ?>
                 <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
-                    class="<?= $currentPageId == $item->object_id ? 'underline' : 'w-fit lg:inline-block'; ?>">
+                    class="<?= $currentPageId == $item->object_id ? 'underline' : 'w-fit lg:inline-block order-1'; ?>">
                     <?= $item->title; ?>
                 </a>
                 <?php continue ?>
