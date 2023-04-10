@@ -50,6 +50,7 @@ add_action(
         register_block_type(__DIR__ . '/blocks/explore-photos');
         register_block_type(__DIR__ . '/blocks/lets-talk');
         register_block_type(__DIR__ . '/blocks/about');
+        register_block_type(__DIR__ . '/blocks/prizes-awards');
     }
 );
 

@@ -8,7 +8,7 @@
 
 $argsAboutJH = array(
     'post_type' => "page",
-    'title' => "About us",
+    'title' => "About-JH",
     'posts_per_page' => 1,
     'order' => 'DESC',
     'orderby' => 'date',
@@ -25,6 +25,14 @@ $argsHero = array(
 
 );
 
+$argsPrizesAwards = array(
+    'post_type' => "page",
+    'title' => "Prizes and awards",
+    'posts_per_page' => 1,
+    'order' => 'DESC',
+    'orderby' => 'date',
+
+);
 
 
 
@@ -43,17 +51,33 @@ if ($queryHero->have_posts()) : ?>
 </div>
 
 <?php endif; ?>
+
 <?php
 $queryAboutJH = new WP_Query($argsAboutJH);
 if ($queryAboutJH->have_posts()) : ?>
-<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
+<main class="flex flex-col h-full w-full px-20">
     <?php while ($queryAboutJH->have_posts()) : $queryAboutJH->the_post(); ?>
-    <?= the_title(); ?>
+    <h3 class=" lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">About</h3>
+    <?= the_content(); ?>
+
+
+    <?php endwhile; ?>
+    </div>
+</main>
+<?php endif; ?>
+
+<?php
+$queryPrizesAwards = new WP_Query($argsPrizesAwards);
+if ($queryPrizesAwards->have_posts()) : ?>
+<main class="flex flex-col h-auto w-full px-20">
+    <?php while ($queryPrizesAwards->have_posts()) : $queryPrizesAwards->the_post(); ?>
+    <h4 class=" lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"><?= the_title(); ?></h4>
     <?= the_content(); ?>
     <?php endwhile; ?>
     </div>
 </main>
 <?php endif; ?>
+
 
 
 <?php get_template_part('parts/shared/letstalk'); ?>

@@ -47,9 +47,9 @@ if ($queryHero->have_posts()) : ?>
 <?php
 $queryAboutUs = new WP_Query($argsAboutUs);
 if ($queryAboutUs->have_posts()) : ?>
-<main class="flex flex-col h-auto w-full mx-[80px]">
+<main class="flex flex-col h-auto w-full px-20">
     <?php while ($queryAboutUs->have_posts()) : $queryAboutUs->the_post(); ?>
-    <?= the_title(); ?>
+    <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"> <?= the_title(); ?></h3>
     <?= the_content(); ?>
     <?php endwhile; ?>
 </main>
