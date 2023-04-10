@@ -18,9 +18,11 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 function kinoK_enqueue_custom_js()
 {
     wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/scripts/scripts.js', null, null, true);
+    wp_enqueue_script('photos', get_stylesheet_directory_uri() . '/scripts/jh-photos.js', null, null, true);
 }
 
 add_action('wp_enqueue_scripts', 'kinoK_enqueue_custom_js');
+
 
 
 
@@ -93,7 +95,7 @@ add_action(
 function print_a($data)
 {
 ?>
-<pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
+    <pre class="block p-6 m-6 border border-brown rounded-xl text-xs overflow-hidden">
     <code> <?php print_r($data); ?> </code>
             </pre>
 <?php

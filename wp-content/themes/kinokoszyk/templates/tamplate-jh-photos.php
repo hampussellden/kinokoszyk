@@ -17,7 +17,7 @@ $aThird = $total / 3;
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
     <?php if ($query->have_posts()) : ?>
-        <section class="flex flex-col flex-wrap pt-6 sm:pt-10 max-h-[2500px] overflow-hidden">
+        <section id="photos-grid" class="flex flex-col flex-wrap pt-6 sm:pt-10 max-h-[2000px] overflow-hidden">
             <?php while ($query->have_posts()) : $query->the_post() ?>
                 <?php if (get_field('joanna_helander')) :  ?>
                     <?php get_template_part('parts/shared/jh-photos') ?>
