@@ -57,6 +57,8 @@ tailwind.config = {
     lineHeight: {
       headingOne: "42px",
       headingTwo: "267px",
+      headingThree: "180px",
+      headingFour: "123px",
       links: "24px",
     },
   },

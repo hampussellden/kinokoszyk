@@ -15,7 +15,7 @@ $argsHero = array(
 
 $argsAboutUs = array(
     'post_type' => "page",
-    'title' => "About us",
+    'title' => "About",
     'posts_per_page' => 1,
     'order' => 'DESC',
     'orderby' => 'date',
@@ -34,8 +34,9 @@ if ($queryHero->have_posts()) : ?>
         class="lg:visible lg: absolute lg:bottom-0 lg:w-full lg:m-0 lg:leading-headingTwo lg:text-[250px] lg:tracking-tightest  lg:font-normal lg:font-display  ">
         KINOKOSZYK</h2>
 
-    <h2
-        class="lg:invisible absolute bottom-0 w-full m-0 leading-headingTwo text-[250px] tracking-tightest  font-normal font-display ">
+    <h2 class="lg:invisible absolute bottom-0 w-full m-0 md:leading-headingTwo md:text-[180px] 
+        md:leading-headingThree sm:text-[123px] sm:leading-headingFour
+        font-normal font-display tracking-tightest  ">
         KINO KOSZYK</h2>
 
 </div>
@@ -46,7 +47,7 @@ if ($queryHero->have_posts()) : ?>
 <?php
 $queryAboutUs = new WP_Query($argsAboutUs);
 if ($queryAboutUs->have_posts()) : ?>
-<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
+<main class="flex flex-col h-auto w-full mx-[80px]">
     <?php while ($queryAboutUs->have_posts()) : $queryAboutUs->the_post(); ?>
     <?= the_title(); ?>
     <?= the_content(); ?>

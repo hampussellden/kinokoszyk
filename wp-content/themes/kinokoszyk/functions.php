@@ -49,7 +49,7 @@ add_action(
         register_block_type(__DIR__ . '/blocks/explore-movies');
         register_block_type(__DIR__ . '/blocks/explore-photos');
         register_block_type(__DIR__ . '/blocks/lets-talk');
-        register_block_type(__DIR__ . '/blocks/hero');
+        register_block_type(__DIR__ . '/blocks/about');
     }
 );
 

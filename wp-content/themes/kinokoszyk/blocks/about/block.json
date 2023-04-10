@@ -1,10 +1,10 @@
 {
-  "name": "acf/hero",
-  "title": "Hero",
-  "description": "A custom block for the hero movie.",
+  "name": "acf/about",
+  "title": "About",
+  "description": "A custom block for about us.",
   "category": "formatting",
   "icon": "admin-comments",
-  "keywords": ["hero", "movie"],
+  "keywords": ["about", "kinokoszyk"],
   "acf": {
     "mode": "preview",
     "renderTemplate": "block.php"
