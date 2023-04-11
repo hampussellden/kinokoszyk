@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 
 <?php
-
-
-
 $argsHero = array(
     'post_type' => "page",
     'title' => "hero",
@@ -12,17 +9,6 @@ $argsHero = array(
     'orderby' => 'date',
 
 );
-
-$argsAboutUs = array(
-    'post_type' => "page",
-    'title' => "About",
-    'posts_per_page' => 1,
-    'order' => 'DESC',
-    'orderby' => 'date',
-
-);
-
-
 $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
 <div class="relative inline-block">
@@ -44,21 +30,27 @@ if ($queryHero->have_posts()) : ?>
 <?php endif; ?>
 
 
-<?php
-$queryAboutUs = new WP_Query($argsAboutUs);
-if ($queryAboutUs->have_posts()) : ?>
-<main class="flex flex-col h-auto w-full px-20">
-    <?php while ($queryAboutUs->have_posts()) : $queryAboutUs->the_post(); ?>
-    <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"> <?= the_title(); ?></h3>
-    <?= the_content(); ?>
-    <?php endwhile; ?>
-</main>
-<?php endif; ?>
 
+
+
+
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php $image = get_field('about_image');
+        $srcset = wp_get_attachment_image_srcset($image['ID']);
+        $alt = $image['alt'];  ?>
+<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"> <?= the_field("about_title"); ?>
+</h3>
+<p>
+    <?= the_field("about"); ?>
+</p>
+<img class="" alt="<?= $alt; ?>" srcset="<?= $srcset; ?>" sizes="100vw" loading="lazy" />
+<?php
+    endwhile;
+endif; ?>
 
 
 
 <?php get_template_part('parts/shared/letstalk'); ?>
 
 
-<?php get_footer();  ?>
+<?php get_footer(); ?>
