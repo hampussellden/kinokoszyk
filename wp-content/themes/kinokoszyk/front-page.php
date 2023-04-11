@@ -34,7 +34,7 @@ if ($queryHero->have_posts()) : ?>
     <?php endwhile; ?>
 
     <h2
-        class="absolute bottom-0 lg:w-full m-0 lg:leading-headingTwo lg:text-[250px] tracking-tightest  font-normal font-display md:text-[180px] leading-headingThree sm:text-[123px] sm:leading-headingFour ">
+        class="absolute bottom-0 lg:w-full m-0 lg:leading-headingTwo  tracking-tightest font-normal font-display text-6xl sm:text-[123px] md:text-[160px] lg:text-[250px] leading-headingThree sm:leading-headingFour ">
         KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h2>
 
 

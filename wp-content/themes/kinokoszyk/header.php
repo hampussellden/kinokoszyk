@@ -30,13 +30,14 @@
 
     <div
         class="lg:mb-4 flex flex-row lg:justify-center space-x- justify-between w-full lg:max-w-screen-md items-baseline bg-kinoblack">
-        <a class="flex flex-row justify-center items-baseline gap-x-[20px]" href="<?= site_url(); ?>">
+        <a class="flex flex-row justify-center items-baseline gap-x-[20px] pl-5 sm:pl-10" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
             <h1 class="font-display text-2xl lg:text-[42px] lg:leading-headingOne lg:font-bold lg:tracking-tight">
                 Kino
                 Koszyk</h1>
         </a>
-        <div class=" mt-2.5 mr-2.5 space-y-2 z-50 lg:hidden group-[.active]:fixed top-10 right-0.5" id="hamburger-menu">
+        <div class=" mt-2.5 mr-2.5 space-y-2 z-50 pr-5 sm:pr-10 lg:hidden group-[.active]:fixed top-10 right-0.5"
+            id="hamburger-menu">
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:rotate-45 group-[.active]:translate-y-[10px]"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:opacity-0"></div>
             <div class="w-8 h-0.5 bg-kinowhite group-[.active]:-rotate-45 group-[.active]:-translate-y-[10px]">
