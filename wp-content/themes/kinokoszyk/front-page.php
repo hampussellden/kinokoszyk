@@ -34,13 +34,10 @@ if ($queryHero->have_posts()) : ?>
     <?php endwhile; ?>
 
     <h2
-        class="lg:visible lg: absolute lg:bottom-0 lg:w-full lg:m-0 lg:leading-headingTwo lg:text-[250px] lg:tracking-tightest  lg:font-normal lg:font-display  ">
-        KINOKOSZYK</h2>
+        class="absolute bottom-0 lg:w-full m-0 lg:leading-headingTwo lg:text-[250px] tracking-tightest  font-normal font-display md:text-[180px] leading-headingThree sm:text-[123px] sm:leading-headingFour ">
+        KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h2>
 
-    <h2 class="lg:invisible absolute bottom-0 w-full m-0 md:leading-headingTwo md:text-[180px] 
-        md:leading-headingThree sm:text-[123px] sm:leading-headingFour
-        font-normal font-display tracking-tightest  ">
-        KINO KOSZYK</h2>
+
 
 </div>
 

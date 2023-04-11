@@ -50,7 +50,7 @@
         <nav
             class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300  lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
             <div
-                class="leading-link font-normal flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px] lg:pt-[29px]">
+                class="leading-link font-normal flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px] lg:pt-[29px] lg:pb-[53px]">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                 <?php foreach ($menuItems as $key => $item) : ?>

@@ -45,8 +45,8 @@ if ($queryHero->have_posts()) : ?>
 
     <h2 class="absolute top-[500px] font-display">JOANNA HELANDER</h2>
     <h3
-        class="absolute bottom-0 lg:w-full m-0 leading-headingTwo text-[250px] tracking-tightest  font-normal font-display flex-wrap">
-        KINO KOSZYK</h3>
+        class="absolute bottom-0 lg:w-full m-0 lg:leading-headingTwo lg:text-[250px] tracking-tightest  font-normal font-display md:text-[180px] leading-headingThree sm:text-[123px] sm:leading-headingFour ">
+        KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h3>
 
 </div>
 
