@@ -1,5 +1,22 @@
 <?php get_header(); ?>
 
+
+<?php $imageAbout = get_field('about_image');
+$srcsetAbout = wp_get_attachment_image_srcset($imageAbout['ID']);
+$altAbout = $imageAbout['alt'];  ?>
+
+<?php $imageMovies = get_field('explore_movies_image');
+$srcsetMovies = wp_get_attachment_image_srcset($imageMovies['ID']);
+$altMovies = $imageMovies['alt'];  ?>
+
+<?php $imageBooks = get_field('explore_books_image');
+$srcsetBooks = wp_get_attachment_image_srcset($imageBooks['ID']);
+$altBooks = $imageBooks['alt'];  ?>
+
+<?php $imagePhotographs = get_field('explore_photographs_image');
+$srcsetPhotographs = wp_get_attachment_image_srcset($imagePhotographs['ID']);
+$altPhotographs = $imagePhotographs['alt'];  ?>
+
 <?php
 $argsHero = array(
     'post_type' => "page",
@@ -35,15 +52,43 @@ if ($queryHero->have_posts()) : ?>
 
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<?php $image = get_field('about_image');
-        $srcset = wp_get_attachment_image_srcset($image['ID']);
-        $alt = $image['alt'];  ?>
+
+
 <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"> <?= the_field("about_title"); ?>
 </h3>
 <p>
-    <?= the_field("about"); ?>
+    <?= the_field("about_description"); ?>
 </p>
-<img class="" alt="<?= $alt; ?>" srcset="<?= $srcset; ?>" sizes="100vw" loading="lazy" />
+<img class="" alt="<?= $altAbout; ?>" srcset="<?= $srcsetAbout; ?>" sizes="100vw" loading="lazy" />
+
+
+<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+    <?= the_field("explore_movies_title"); ?>
+</h3>
+<p>
+    <?= the_field("explore_movies_description"); ?>
+</p>
+<img class="" alt="<?= $altMovies; ?>" srcset="<?= $srcsetMovies; ?>" sizes="100vw" loading="lazy" />
+
+
+
+<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+    <?= the_field("explore_books_title"); ?>
+</h3>
+<p>
+    <?= the_field("explore_books_description"); ?>
+</p>
+<img class="" alt="<?= $altBooks; ?>" srcset="<?= $srcsetBooks; ?>" sizes="100vw" loading="lazy" />
+
+
+<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+    <?= the_field("explore_photographs_title"); ?>
+</h3>
+<p>
+    <?= the_field("explore_photographs_description"); ?>
+</p>
+<img class="" alt="<?= $altPhotographs; ?>" srcset="<?= $srcsetPhotographs; ?>" sizes="100vw" loading="lazy" />
+
 <?php
     endwhile;
 endif; ?>
