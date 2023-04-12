@@ -49,7 +49,9 @@ $firstPost = new WP_Query($args);
                     <p class="absolute left-4 top-4">Latest news</p>
                 <?php endif; ?>
                 <div class="text-kinodeepblack ml-10 mr-10 mt-10 pb-12">
-                    <h3 class="font-display text-8xl text-kinodeepblack mb-5 mt-4"><?= the_title(); ?></h3>
+                    <a href="<?= the_permalink(); ?>">
+                        <h3 class="font-display text-8xl text-kinodeepblack mb-5 mt-4"><?= the_title(); ?></h3>
+                    </a>
                     <?php if (get_field('news_description')) : ?>
                         <p class="mb-5"><?= substr(get_field('news_description'), 0, 132) . '...' ?></p>
                     <?php endif; ?>
@@ -62,7 +64,7 @@ $firstPost = new WP_Query($args);
     <section class="flex flex-col justify-center lg:grid grid-cols-3 gap-6 sm:gap-5 px-5 lg:px-10">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php
-                $thumbNailImage = get_field('news_thumbnail_image'); // Move this here to get unique thumbnail image for each post
+                $thumbNailImage = get_field('news_thumbnail_image');
                 if ($thumbNailImage) {
                     $thumbNailImageID = $thumbNailImage['ID'];
                     $thumbNailSrcset = wp_get_attachment_image_srcset($thumbNailImageID);
@@ -80,13 +82,16 @@ $firstPost = new WP_Query($args);
                         </div>
                     <?php endif; ?>
                     <div class="flex flex-col text-kinodeepblack pr-4 pl-4 pb-10 h-full">
-                        <h3 class="font-display text-2xl text-kinodeepblack mt-4 mb-5 lg:mt-5 lg:text-4xl"><?= the_title(); ?></h3>
+                        <a href="<?= the_permalink(); ?>">
+                            <h3 class="font-display text-2xl text-kinodeepblack mt-4 mb-5 lg:mt-5 lg:text-4xl"><?= the_title(); ?></h3>
+                        </a>
                         <?php if (get_field('news_description')) : ?>
                             <p class="mb-5"><?= substr(get_field('news_description'), 0, 132) . '...' ?></p>
                         <?php endif; ?>
-                        <div class="mt-auto">
-                            <a class="text-kinored font-bold" href="<?= the_permalink(); ?>">Read More ></a>
-                        </div>
+                        <a class="mt-auto" href="<?= the_permalink(); ?>">
+                            <p class="text-kinored font-bold">Read More >
+                            </p>
+                        </a>
                     </div>
                 </article>
         <?php endwhile;
