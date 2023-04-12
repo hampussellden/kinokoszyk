@@ -46,18 +46,19 @@
     </div>
     <!-- hamburger bar -->
 
-    <div id="navigation" class="group top-[266px] lg:border-solid lg:border-t-[1px] lg:border-kinowhite">
+    <div id="navigation"
+        class="group top-[266px] lg:border-solid lg:border-t-[1px] lg:border-kinowhite pb-[27px] lg:pb-[53px] lg:pt-[29px]">
         <nav
             class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300  lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
             <div
-                class="leading-link font-normal flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px] lg:pt-[29px] lg:pb-[53px]">
+                class="leading-link font-normal flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px]">
                 <?php $currentPageId = get_queried_object_id(); ?>
                 <?php if ($menuItems) : ?>
                 <?php foreach ($menuItems as $key => $item) : ?>
 
                 <?php if ($item->title === "Kino Koszyk") : ?>
                 <a title="<?= $item->title ?>" href="<?= $item->url; ?>"
-                    class="<?= $currentPageId == $item->object_id ? 'underline order-1 border-t lg:order-first lg:border-none' : 'lg:border-none lg:order-first  order-1 border-t w-fit lg:inline-block'; ?>">
+                    class="lg:border-none lg:order-first  order-1 border-t w-fit lg:inline-block pt-5 lg:pt-0">
                     <?= $item->title; ?>
                     <div class="-"></div>
                 </a>

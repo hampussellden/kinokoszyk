@@ -38,15 +38,25 @@ $argsPrizesAwards = array(
 
 $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
-<div class="relative inline-block">
+<div class="relative inline-block flex flex-col items-start">
     <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
-    <div class="block w-full "><?= the_content(); ?></div>
+    <div class="block min-h-[55vw]  w-full "><?= the_content(); ?></div>
     <?php endwhile; ?>
 
-    <h2 class="absolute top-[500px] font-display">JOANNA HELANDER</h2>
-    <h3
-        class="absolute bottom-0 lg:w-full m-0 lg:leading-headingTwo lg:text-[250px] tracking-tightest  font-normal font-display md:text-[180px] leading-headingThree sm:text-[123px] sm:leading-headingFour ">
-        KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h3>
+    <h2 class="absolute font-display 
+    bottom-0 sm:bottom-24 md:bottom-28 lg:bottom-36 xl:bottom-48
+    text-7xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl
+    sm:tracking-widest
+    sm:self-center xl:pl-5
+    pl-4 sm:pl-0
+    ">JOANNA HELANDER</h2>
+    <h3 class="absolute bottom-0 self-center m-0
+        sm:text-[112px] md:text-[136px] lg:text-[180px] xl:text-[248px]
+        sm:leading-headingOne md:leading-headingTwo 
+        lg:leading-headingThree xl:leading-headingFour
+        tracking-tightest  font-normal font-display 
+        hidden sm:inline-block">
+        KINO<span class="sm:hidden"> </span>KOSZYK</h3>
 
 </div>
 
