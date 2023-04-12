@@ -3,31 +3,31 @@
 <?php get_header('jh'); ?>
 
 
+
+
+<?php $imageAbout = get_field('about_image');
+$srcsetAbout = wp_get_attachment_image_srcset($imageAbout['ID']);
+$altAbout = $imageAbout['alt'];  ?>
+
+<?php $imageBooks = get_field('explore_books_image');
+$srcsetBooks = wp_get_attachment_image_srcset($imageBooks['ID']);
+$altBooks = $imageBooks['alt'];  ?>
+
+<?php $imagePhotographs = get_field('explore_photographs_image');
+$srcsetPhotographs = wp_get_attachment_image_srcset($imagePhotographs['ID']);
+$altPhotographs = $imagePhotographs['alt'];  ?>
+
+
+
 <?php
 
 
-$argsAboutJH = array(
-    'post_type' => "page",
-    'title' => "About-JH",
-    'posts_per_page' => 1,
-    'order' => 'DESC',
-    'orderby' => 'date',
 
-);
 
 
 $argsHero = array(
     'post_type' => "page",
     'title' => "hero",
-    'posts_per_page' => 1,
-    'order' => 'DESC',
-    'orderby' => 'date',
-
-);
-
-$argsPrizesAwards = array(
-    'post_type' => "page",
-    'title' => "Prizes and awards",
     'posts_per_page' => 1,
     'order' => 'DESC',
     'orderby' => 'date',
@@ -40,7 +40,7 @@ $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
 <div class="relative inline-block flex flex-col items-start">
     <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
-    <div class="block min-h-[55vw]  w-full "><?= the_content(); ?></div>
+    <div class="block min-h-[55vw] w-full "><?= the_content(); ?></div>
     <?php endwhile; ?>
 
     <h2 class="absolute font-display 
@@ -54,7 +54,7 @@ if ($queryHero->have_posts()) : ?>
         sm:text-[112px] md:text-[136px] lg:text-[180px] xl:text-[248px]
         sm:leading-headingOne md:leading-headingTwo 
         lg:leading-headingThree xl:leading-headingFour
-        tracking-tightest  font-normal font-display 
+        tracking-tightest font-normal font-display 
         hidden sm:inline-block">
         KINO<span class="sm:hidden"> </span>KOSZYK</h3>
 
@@ -62,44 +62,62 @@ if ($queryHero->have_posts()) : ?>
 
 <?php endif; ?>
 
-<?php
-$queryAboutJH = new WP_Query($argsAboutJH);
-if ($queryAboutJH->have_posts()) : ?>
-<main class="flex flex-col h-full w-full px-20">
-    <?php while ($queryAboutJH->have_posts()) : $queryAboutJH->the_post(); ?>
-    <h3 class=" lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">About</h3>
-    <?= the_content(); ?>
 
-
-    <?php endwhile; ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<main class="mx-3.5 sm:mx-7 lg:mx-[60px]">
+    <div class="w-full flex flex-row ">
+        <h3 class=" text-5xl sm:text-[96px] lg:text-[136px] font-display tracking-tighter font-normal 
+        pt-12 sm:pt-20 lg:pt-32 
+        pb-6 sm:pb-8 lg:pb-10
+        ">
+            <?= the_field("about_title"); ?>
+        </h3>
     </div>
-</main>
-<?php endif; ?>
-
-<?php
-$queryPrizesAwards = new WP_Query($argsPrizesAwards);
-if ($queryPrizesAwards->have_posts()) : ?>
-<main class="flex flex-col h-auto w-full px-20">
-    <?php while ($queryPrizesAwards->have_posts()) : $queryPrizesAwards->the_post(); ?>
-    <h4 class=" lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"><?= the_title(); ?></h4>
-    <?= the_content(); ?>
-    <?php endwhile; ?>
+    <div class="w-full flex flex-row justify-around gap-[44px]">
+        <p class="lg:max-w-[60ch] lg:text-xl sm:text-lg ">
+            <?= the_field("about_description"); ?>
+        </p>
+        <img class="max-w-1/2 object-contain hidden self-start sm:inline-block" alt="<?= $altAbout; ?>"
+            srcset="<?= $srcsetAbout; ?>" sizes="50vw" loading="lazy" />
     </div>
+
+    <div>
+        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+            <?= the_field("prizes_and_awards_title"); ?>
+        </h3>
+        <p>
+            <?= the_field("prizes_and_awards_description"); ?>
+        </p>
+
+    </div>
+
+    <div>
+        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+            <?= the_field("explore_books_title"); ?>
+        </h3>
+        <p>
+            <?= the_field("explore_books_description"); ?>
+        </p>
+        <img class="" alt="<?= $altBooks; ?>" srcset="<?= $srcsetBooks; ?>" sizes="100vw" loading="lazy" />
+    </div>
+
+    <div>
+        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+            <?= the_field("explore_photographs_title"); ?>
+        </h3>
+        <p>
+            <?= the_field("explore_photographs_description"); ?>
+        </p>
+        <img class="" alt="<?= $altPhotographs; ?>" srcset="<?= $srcsetPhotographs; ?>" sizes="100vw" loading="lazy" />
+    </div>
+    <?php
+    endwhile;
+endif; ?>
+
 </main>
-<?php endif; ?>
 
 
 
 <?php get_template_part('parts/shared/letstalk'); ?>
-
-<!-- <section class="absolute top-0 w-screen h-screen bg-kinoblack">
-    <section class="h-screen flex justify-start items-end">
-        <section>
-            <h1 class="font-display text-7xl w-1/2 md:w-full">JOANNA HELANDER</h1>
-            <h2 class="font-display text-7xl hidden md:block">KINOKOSZYK</h2>
-        </section>
-    </section>
-</section> -->
-
 
 <?php get_footer(); ?>

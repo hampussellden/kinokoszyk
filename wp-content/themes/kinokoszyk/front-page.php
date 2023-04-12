@@ -30,11 +30,15 @@ $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
 <div class="relative inline-block">
     <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
-    <div class="block w-full "><?= the_content(); ?></div>
+    <div class="block min-h-[55vw] w-full "><?= the_content(); ?></div>
     <?php endwhile; ?>
 
-    <h2
-        class="absolute bottom-0 lg:w-full m-0 lg:leading-headingTwo  tracking-tightest font-normal font-display text-6xl sm:text-[123px] md:text-[160px] lg:text-[250px] leading-headingThree sm:leading-headingFour ">
+    <h2 class="absolute bottom-0 self-center m-0
+        sm:text-[112px] md:text-[136px] lg:text-[180px] xl:text-[248px]
+        sm:leading-headingOne md:leading-headingTwo 
+        lg:leading-headingThree xl:leading-headingFour
+        tracking-tightest font-normal font-display 
+        hidden sm:inline-block">
         KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h2>
 
 
@@ -44,53 +48,59 @@ if ($queryHero->have_posts()) : ?>
 <?php endif; ?>
 
 
-
-
-
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<main class="mx-3.5 sm:mx-7 lg:mx-[60px]">
+    <div class="w-full flex flex-row ">
+        <h3 class=" text-5xl sm:text-[96px] lg:text-[136px] font-display tracking-tighter font-normal 
+        pt-12 sm:pt-20 lg:pt-32 
+        pb-6 sm:pb-8 lg:pb-10
+        ">
+            <?= the_field("about_title"); ?>
+        </h3>
+    </div>
+    <div class="w-full flex flex-row justify-around gap-[44px]">
+        <p class="lg:max-w-[60ch] lg:text-xl sm:text-lg ">
+            <?= the_field("about_description"); ?>
+        </p>
+        <img class="max-w-1/2 object-contain hidden self-start sm:inline-block" alt="<?= $altAbout; ?>"
+            srcset="<?= $srcsetAbout; ?>" sizes="50vw" loading="lazy" />
+    </div>
 
+    <div>
+        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+            <?= the_field("explore_movies_title"); ?>
+        </h3>
+        <p>
+            <?= the_field("explore_movies_description"); ?>
+        </p>
+        <img class="" alt="<?= $altMovies; ?>" srcset="<?= $srcsetMovies; ?>" sizes="100vw" loading="lazy" />
 
-<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]"> <?= the_field("about_title"); ?>
-</h3>
-<p>
-    <?= the_field("about_description"); ?>
-</p>
-<img class="" alt="<?= $altAbout; ?>" srcset="<?= $srcsetAbout; ?>" sizes="100vw" loading="lazy" />
+    </div>
 
+    <div>
+        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+            <?= the_field("explore_books_title"); ?>
+        </h3>
+        <p>
+            <?= the_field("explore_books_description"); ?>
+        </p>
+        <img class="" alt="<?= $altBooks; ?>" srcset="<?= $srcsetBooks; ?>" sizes="100vw" loading="lazy" />
+    </div>
 
-<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
-    <?= the_field("explore_movies_title"); ?>
-</h3>
-<p>
-    <?= the_field("explore_movies_description"); ?>
-</p>
-<img class="" alt="<?= $altMovies; ?>" srcset="<?= $srcsetMovies; ?>" sizes="100vw" loading="lazy" />
-
-
-
-<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
-    <?= the_field("explore_books_title"); ?>
-</h3>
-<p>
-    <?= the_field("explore_books_description"); ?>
-</p>
-<img class="" alt="<?= $altBooks; ?>" srcset="<?= $srcsetBooks; ?>" sizes="100vw" loading="lazy" />
-
-
-<h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
-    <?= the_field("explore_photographs_title"); ?>
-</h3>
-<p>
-    <?= the_field("explore_photographs_description"); ?>
-</p>
-<img class="" alt="<?= $altPhotographs; ?>" srcset="<?= $srcsetPhotographs; ?>" sizes="100vw" loading="lazy" />
-
-<?php
+    <div>
+        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+            <?= the_field("explore_photographs_title"); ?>
+        </h3>
+        <p>
+            <?= the_field("explore_photographs_description"); ?>
+        </p>
+        <img class="" alt="<?= $altPhotographs; ?>" srcset="<?= $srcsetPhotographs; ?>" sizes="100vw" loading="lazy" />
+    </div>
+    <?php
     endwhile;
 endif; ?>
 
-
+</main>
 
 <?php get_template_part('parts/shared/letstalk'); ?>
 

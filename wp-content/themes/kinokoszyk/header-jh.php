@@ -33,7 +33,7 @@
         <a class="flex flex-row justify-center items-center gap-x-[20px]"
             href="<?= site_url() . "/joanna-helander/"; ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/jhlogo.svg" class="" />
-            <h1 class="font-display text-2xl lg:text-[42px] lg:leading-headingOne lg:font-bold lg:tracking-tight">
+            <h1 class="font-display text-2xl lg:text-5xl lg:leading-headingOne lg:font-bold lg:tracking-tight">
                 Joanna
                 Helander</h1>
         </a>

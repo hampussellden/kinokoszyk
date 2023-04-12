@@ -32,7 +32,8 @@
         class="lg:mb-4 flex flex-row lg:justify-center space-x- justify-between w-full lg:max-w-screen-md items-baseline bg-kinoblack">
         <a class="flex flex-row justify-center items-baseline gap-x-[20px] pl-5 sm:pl-10" href="<?= site_url(); ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg" class="" />
-            <h1 class="font-display text-2xl lg:text-[42px] lg:leading-headingOne lg:font-bold lg:tracking-tight">
+            <h1 class="font-display text-2xl lg:text-5xl
+            lg:font-bold lg:tracking-tight">
                 Kino
                 Koszyk</h1>
         </a>
@@ -50,7 +51,7 @@
     <div id="navigation"
         class="group top-[266px] lg:border-solid lg:border-t-[1px] lg:border-kinowhite pb-[27px] lg:pb-[53px] lg:pt-[29px]">
         <nav
-            class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300  lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
+            class="flex flex-col lg:flex-row w-full h-screen z-40 bg-kinoblack fixed inset-0 translate-x-full group-[.active]:translate-x-0 justify-center items-center transition-transform duration-300 lg:h-fit lg:z-auto lg:bg-inherit lg:static lg:translate-x-0">
             <div
                 class="leading-link font-normal flex flex-col lg:flex-row items-center justify-center lg:gap-8 lg:text-[20px] gap-y-12 text-[32px]">
                 <?php $currentPageId = get_queried_object_id(); ?>
