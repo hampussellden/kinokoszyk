@@ -28,81 +28,95 @@ $argsHero = array(
 );
 $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
-<div class="relative inline-block">
-    <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
-    <div class="block min-h-[55vw] w-full "><?= the_content(); ?></div>
-    <?php endwhile; ?>
+    <div class="relative inline-block">
+        <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
+            <div class="block min-h-[55vw] w-full "><?= the_content(); ?></div>
+        <?php endwhile; ?>
 
-    <h2 class="absolute bottom-0 self-center m-0
+        <h2 class="absolute bottom-0 self-center m-0
         sm:text-[112px] md:text-[136px] lg:text-[180px] xl:text-[248px]
         sm:leading-headingOne md:leading-headingTwo 
         lg:leading-headingThree xl:leading-headingFour
         tracking-tightest font-normal font-display 
         hidden sm:inline-block">
-        KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h2>
+            KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h2>
 
 
 
-</div>
+    </div>
 
 <?php endif; ?>
 
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<main class="mx-3.5 sm:mx-7 lg:mx-[60px]">
-    <div class="w-full flex flex-row ">
-        <h3 class=" text-5xl sm:text-[96px] lg:text-[136px] font-display tracking-tighter font-normal 
+        <main class="mx-3.5 sm:mx-7 lg:mx-[60px]">
+            <div class="w-full flex flex-row ">
+                <h3 class=" text-5xl sm:text-[96px] lg:text-[136px] font-display tracking-tighter font-normal 
         pt-12 sm:pt-20 lg:pt-32 
         pb-6 sm:pb-8 lg:pb-10
         ">
-            <?= the_field("about_title"); ?>
-        </h3>
-    </div>
-    <div class="w-full flex flex-row justify-around gap-[44px]">
-        <p class="lg:max-w-[60ch] lg:text-xl sm:text-lg ">
-            <?= the_field("about_description"); ?>
-        </p>
-        <img class="max-w-1/2 object-contain hidden self-start sm:inline-block" alt="<?= $altAbout; ?>"
-            srcset="<?= $srcsetAbout; ?>" sizes="50vw" loading="lazy" />
-    </div>
+                    <?= the_field("about_title"); ?>
+                </h3>
+            </div>
+            <div class="w-full flex flex-row justify-around gap-[44px]">
+                <p class="lg:max-w-[60ch] lg:text-xl sm:text-lg ">
+                    <?= the_field("about_description"); ?>
+                </p>
+                <img class="max-w-1/2 object-contain hidden self-start sm:inline-block" alt="<?= $altAbout; ?>" srcset="<?= $srcsetAbout; ?>" sizes="50vw" loading="lazy" />
+            </div>
 
-    <div>
-        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
-            <?= the_field("explore_movies_title"); ?>
-        </h3>
-        <p>
-            <?= the_field("explore_movies_description"); ?>
-        </p>
-        <img class="" alt="<?= $altMovies; ?>" srcset="<?= $srcsetMovies; ?>" sizes="100vw" loading="lazy" />
+            <section>
+                <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto lg:flex-row lg:justify-center lg:items-center lg:gap-11 lg:border-t lg:pb-[60px] lg:pt-[60px] lg:pb-[89px] lg:pt-[80px]">
+                    <div class="lg:flex lg:flex-col lg:h-[391px] lg:w-full lg:justify-center lg:gap-10">
+                        <div class="flex flex-col gap-4 lg:gap-5">
+                            <h3 class="font-display text-3xl"><?= the_field("explore_movies_title") ?></h3>
+                            <p class="line-clamp-4"><?php the_field("explore_movies_description"); ?></p>
+                        </div>
+                        <?php get_template_part('parts/shared/seemore-btn') ?>
+                    </div>
+                    <?php if ($imageMovies) : ?>
+                        <div>
+                            <img class="max-w-[91.64%] lg:max-h-[350px] lg:max-w-[500px]" alt="<?= $altMovies; ?>" srcset="<?= $srcsetMovies; ?>" sizes="100vw" loading="lazy" />
+                        </div>
+                    <?php endif; ?>
+                </article>
 
-    </div>
+                <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto lg:flex-row lg:justify-center lg:items-center lg:gap-11 lg:border-t lg:pb-[60px] lg:pt-[60px] lg:pb-[89px] lg:pt-[80px]">
+                    <div class="lg:flex lg:flex-col lg:h-[391px] lg:w-full lg:justify-center lg:gap-10">
+                        <div class="flex flex-col gap-4 lg:gap-5">
+                            <h3 class="font-display text-3xl"><?= the_field("explore_movies_title") ?></h3>
+                            <p class="line-clamp-4"><?php the_field("explore_movies_description"); ?></p>
+                        </div>
+                        <?php get_template_part('parts/shared/seemore-btn') ?>
+                    </div>
+                    <?php if ($imageBooks) : ?>
+                        <div>
+                            <img class="max-w-[91.64%]  lg:max-h-[350px] lg:max-w-[500px]" alt="<?= $altBooks; ?>" srcset="<?= $srcsetBooks; ?>" sizes="100vw" loading="lazy" />
+                        </div>
+                    <?php endif; ?>
+                </article>
 
-    <div>
-        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
-            <?= the_field("explore_books_title"); ?>
-        </h3>
-        <p>
-            <?= the_field("explore_books_description"); ?>
-        </p>
-        <img class="" alt="<?= $altBooks; ?>" srcset="<?= $srcsetBooks; ?>" sizes="100vw" loading="lazy" />
-    </div>
+                <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto lg:flex-row  lg:justify-center lg:items-center lg:gap-11 lg:border-t lg:pb-[60px] lg:pt-[60px] lg:pb-[89px] lg:pt-[80px]">
+                    <div class="lg:flex lg:flex-col lg:h-[391px] lg:w-full lg:justify-center lg:gap-10">
+                        <div class="flex flex-col gap-4 lg:gap-5">
+                            <h3 class="font-display text-3xl"><?= the_field("explore_movies_title") ?></h3>
+                            <p class="line-clamp-4"><?php the_field("explore_movies_description"); ?></p>
+                        </div>
+                        <?php get_template_part('parts/shared/seemore-btn') ?>
+                    </div>
+                    <?php if ($imagePhotographs) : ?>
+                        <div>
+                            <img class="max-w-[91.64%] lg:max-h-[350px] lg:max-w-[500px]" alt="<?= $altPhotographs; ?>" srcset="<?= $srcsetPhotographs; ?>" sizes="100vw" loading="lazy" />
+                        </div>
+                    <?php endif; ?>
+                </article>
+            </section>
+        <?php endwhile; ?>
+    <?php endif; ?>
 
-    <div>
-        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
-            <?= the_field("explore_photographs_title"); ?>
-        </h3>
-        <p>
-            <?= the_field("explore_photographs_description"); ?>
-        </p>
-        <img class="" alt="<?= $altPhotographs; ?>" srcset="<?= $srcsetPhotographs; ?>" sizes="100vw" loading="lazy" />
-    </div>
-    <?php
-    endwhile;
-endif; ?>
+        </main>
 
-</main>
-
-<?php get_template_part('parts/shared/letstalk'); ?>
+        <?php get_template_part('parts/shared/letstalk'); ?>
 
 
-<?php get_footer(); ?>
+        <?php get_footer(); ?>
