@@ -29,7 +29,7 @@ $query = new WP_Query($args)
     </section>
 <?php endif; ?>
 <main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
-    <div class="px-1.5 sm:px-3 lg:px-5">
+    <div class="">
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
     <section class="flex flex-col">

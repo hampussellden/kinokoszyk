@@ -6,7 +6,7 @@ $srcset = wp_get_attachment_image_srcset($image['ID']);
     <div class="overflow-hidden">
         <img class="object-contain" srcset="<?= $srcset; ?>" sizes="100vw" loading="lazy" />
     </div>
-    <div class="flex flex-row justify-center items-center py-2 bg-kinogrey rounded-b-sm">
-        <h4 class="font-display text-black sm:text-4xl"><?php the_field('subject'); ?></h4>
+    <div class="flex flex-row py-2 bg-kinogrey rounded-b-sm">
+        <h4 class="font-display pl-2 text-black sm:text-4xl"><?php the_field('subject'); ?></h4>
     </div>
 </div>
