@@ -38,7 +38,8 @@ function register_theme_menus()
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu'),
         'secondary-menu' => __('Secondary Menu'),
-        'footer-menu' => __('Footer Menu'),
+        'footer-links' => __('Footer Links'),
+        'footer-contacts' => __('Footer Contacts'),
     ));
 }
 add_action('init', 'register_theme_menus');

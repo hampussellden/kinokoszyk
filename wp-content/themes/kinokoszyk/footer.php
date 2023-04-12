@@ -1,6 +1,8 @@
 <?php wp_footer() ?>
+<?php $links =  wp_get_nav_menu_items('footer-links'); ?>
+<?php $contact =  wp_get_nav_menu_items('footer-contacts'); ?>
 </body>
-<footer class="w-screen">
+<footer class="w-screen bg-kinodeepblack">
     <section class="pl-5 pt-12 md:flex justify-between items-center md:pl-10 md:py-20 md:pr-12 lg:pl-20 lg:py-24 lg:pr-40">
         <section class="py-10 flex flex-col gap-10">
             <section class="flex gap-10 items-center">
@@ -25,16 +27,20 @@
         <section class="py-6 md:flex">
             <div class="flex flex-col border-b pb-7 border-solid md:gap-2.5 md:p-0 md:border-b-0 md:border-r md:pr-24">
                 <h3 class="text-base font-bold">LINKS</h3>
-                <a class="text-sm w-fit" href="http://teatrosmegodnia.pl/">Teatr Ósmego Dnia</a>
-                <a class="text-sm w-fit" href="http://www.kuryluk.art.pl/">Ewa Kuryluk</a>
-                <a class="text-sm w-fit" href="https://konstepidemin.se/en/">Konstepidimin</a>
+                <?php foreach ($links as $link) : ?>
+                    <a class="text-sm w-fit" href="<?= $link->url ?>"><?= $link->title ?></a>
+                <?php endforeach ?>
             </div>
             <div class="flex flex-col pt-7 md:gap-2.5 md:pt-0 md:pl-24">
                 <h3 class="text-base font-bold">CONTACT</h3>
                 <p class="text-sm">Bo Persson och Joanna Helander</p>
-                <a class="text-sm w-fit" href="mailto:kino.koszyk@gmail.com">kino.koszyk@gmail.com</a>
-                <a class="text-sm w-fit" href="tel:+46768327455">Tel. +46 768 32 74 55</a>
-                <a class="text-sm w-fit" href="https://www.google.com/maps/search/?api=1&query=Konstepidimins+v%C3%A4g+6" target="_blank">Konstepidimins väg 6</a>
+
+
+                <?php foreach ($contact as $item) : ?>
+                    <a class="text-sm w-fit" href="<?= $item->url ?>"><?= $item->title ?></a>
+                <?php endforeach ?>
+                <!-- <a class="text-sm w-fit" href="https://www.google.com/maps/search/?api=1&query=Konstepidimins+v%C3%A4g+6" target="_blank">Konstepidimins väg 6</a> -->
+
             </div>
         </section>
     </section>
