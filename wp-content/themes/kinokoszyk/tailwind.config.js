@@ -59,6 +59,8 @@ tailwind.config = {
       headingTwo: "112px",
       headingThree: "150px",
       headingFour: "208px",
+      headingFive: "100px",
+      headingSix: "136px",
       links: "24px",
     },
   },

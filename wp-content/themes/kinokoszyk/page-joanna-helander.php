@@ -66,15 +66,16 @@ if ($queryHero->have_posts()) : ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <main class="mx-3.5 sm:mx-7 lg:mx-[60px]">
     <div class="w-full flex flex-row ">
-        <h3 class=" text-5xl sm:text-[96px] lg:text-[136px] font-display tracking-tighter font-normal 
+        <h3 class=" text-5xl sm:text-[96px] lg:text-[128px] font-display tracking-tighter font-normal 
         pt-12 sm:pt-20 lg:pt-32 
         pb-6 sm:pb-8 lg:pb-10
+        sm:leading-headingFive lg:leading-headingSix
         ">
             <?= the_field("about_title"); ?>
         </h3>
     </div>
     <div class="w-full flex flex-row justify-around gap-[44px]">
-        <p class="lg:max-w-[60ch] lg:text-xl sm:text-lg ">
+        <p class="max-w-[70ch] text-base lg:text-xl sm:text-lg ">
             <?= the_field("about_description"); ?>
         </p>
         <img class="max-w-1/2 object-contain hidden self-start sm:inline-block" alt="<?= $altAbout; ?>"
@@ -82,10 +83,14 @@ if ($queryHero->have_posts()) : ?>
     </div>
 
     <div>
-        <h3 class="lg:text-[128px] font-display tracking-tighter font-normal pt-[128px]">
+        <h3 class="max-w-[12ch] sm:max-w-[70ch]
+         text-5xl sm:text-[96px] lg:text-[128px] font-display tracking-tighter font-normal
+        sm:leading-headingFive lg:leading-headingSix
+        pt-20 md:pt-32
+        pb-7 sm:pb-10 lg:pb-20">
             <?= the_field("prizes_and_awards_title"); ?>
         </h3>
-        <p>
+        <p class="max-w-[70ch] text-base lg:text-xl sm:text-lg ">
             <?= the_field("prizes_and_awards_description"); ?>
         </p>
 
@@ -115,7 +120,6 @@ if ($queryHero->have_posts()) : ?>
 endif; ?>
 
 </main>
-
 
 
 <?php get_template_part('parts/shared/letstalk'); ?>

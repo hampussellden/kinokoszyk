@@ -30,7 +30,7 @@
 
     <div
         class="lg:mb-4 flex flex-row lg:justify-center space-x- justify-between w-full lg:max-w-screen-md items-baseline bg-kinoblack">
-        <a class="flex flex-row justify-center items-center gap-x-[20px]"
+        <a class="flex flex-row justify-center items-center gap-x-[20px] pl-5 sm:pl-10"
             href="<?= site_url() . "/joanna-helander/"; ?>">
             <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/jhlogo.svg" class="" />
             <h1 class="font-display text-2xl lg:text-5xl lg:leading-headingOne lg:font-bold lg:tracking-tight">

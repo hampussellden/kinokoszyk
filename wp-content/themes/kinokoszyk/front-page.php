@@ -51,15 +51,16 @@ if ($queryHero->have_posts()) : ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <main class="mx-3.5 sm:mx-7 lg:mx-[60px]">
     <div class="w-full flex flex-row ">
-        <h3 class=" text-5xl sm:text-[96px] lg:text-[136px] font-display tracking-tighter font-normal 
+        <h3 class=" text-5xl sm:text-[96px] lg:text-[128px] font-display tracking-tighter font-normal 
         pt-12 sm:pt-20 lg:pt-32 
         pb-6 sm:pb-8 lg:pb-10
+        sm:leading-headingFive lg:leading-headingSix
         ">
             <?= the_field("about_title"); ?>
         </h3>
     </div>
     <div class="w-full flex flex-row justify-around gap-[44px]">
-        <p class="lg:max-w-[60ch] lg:text-xl sm:text-lg ">
+        <p class="max-w-[70ch] lg:text-xl sm:text-lg ">
             <?= the_field("about_description"); ?>
         </p>
         <img class="max-w-1/2 object-contain hidden self-start sm:inline-block" alt="<?= $altAbout; ?>"
