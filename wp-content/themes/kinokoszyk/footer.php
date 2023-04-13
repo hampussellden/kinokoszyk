@@ -3,7 +3,7 @@
 <?php $contact =  wp_get_nav_menu_items('footer-contacts'); ?>
 
 <footer class="w-full bg-kinodeepblack">
-    <section class="pl-5 pt-12 md:flex justify-between items-center md:pl-10 md:py-20 md:pr-12 lg:pl-20 lg:py-24 lg:pr-40">
+    <section class="pl-5 md:flex justify-between items-center md:pl-10 md:py-20 md:pr-12 lg:pl-20 lg:py-16 lg:pr-40">
         <section class="py-10 flex flex-col gap-10 pr-10">
             <section class="flex gap-10 items-center">
                 <svg width="69" height="37" viewBox="0 0 69 37" fill="none" xmlns="http://www.w3.org/2000/svg">
