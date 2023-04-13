@@ -33,12 +33,12 @@ if ($queryHero->have_posts()) : ?>
             <div class="block min-h-[55vw] w-full "><?= the_content(); ?></div>
         <?php endwhile; ?>
 
-        <h2 class="absolute bottom-0 self-center m-0
-        sm:text-[112px] md:text-[136px] lg:text-[180px] xl:text-[248px]
+        <h2 class="absolute bottom-0 self-center m-0 text-8xl
+        sm:text-[112px] md:text-[136px] lg:text-[180px] xl:text-[224px]
         sm:leading-headingOne md:leading-headingTwo 
         lg:leading-headingThree xl:leading-headingFour
         tracking-tightest font-normal font-display 
-        hidden sm:inline-block">
+        inset-x-0 md:text-center">
             KINO<span class="lg:hidden md:hidden"> </span>KOSZYK</h2>
 
 

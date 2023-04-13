@@ -44,7 +44,7 @@ if ($queryHero->have_posts()) : ?>
 
         <h2 class="absolute font-display 
     bottom-0 sm:bottom-24 md:bottom-28 lg:bottom-36 xl:bottom-48
-    text-7xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl
+    text-6xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl
     sm:tracking-widest
     sm:self-center xl:pl-5
     pl-4 sm:pl-0
@@ -115,7 +115,7 @@ if ($queryHero->have_posts()) : ?>
                     <?php endif; ?>
                 </article>
 
-                <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto lg:flex-row lg:justify-center lg:items-center lg:gap-11 lg:border-t lg:pt-[60px] lg:pb-[89px] lg:pt-[80px]">
+                <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto lg:flex-row-reverse lg:justify-center lg:items-center lg:gap-11 lg:border-t lg:pt-[60px] lg:pb-[89px] lg:pt-[80px]">
                     <div class="lg:flex lg:flex-col lg:h-[391px] lg:w-full lg:justify-center lg:gap-10">
                         <div class="flex flex-col gap-4 lg:gap-5">
                             <h3 class="font-display text-3xl"><?= the_field("explore_photographs_title") ?></h3>

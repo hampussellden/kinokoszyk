@@ -6,12 +6,12 @@
             <p class="text-xs text-kinodeepblack font-light md:text-xl">While waiting for an answer, why not read some of our news articles?</p>
         </div>
         <div class="flex gap-7 md:gap-10 lg:gap-20">
-            <a href="news-2" class="text-kinored">
+            <a href="/news" class="text-kinored">
                 <button class="rounded-sm box-content text-sm px-5 py-3 border-solid box-border outline-none md:text-2xl md:px-8 hover:bg-kinowhite hover:text-kinored duration-200" style="box-shadow: inset 0 0 0 2px #751010;">
                     Articles
                 </button>
             </a>
-            <a href="contact" class="text-kinowhite">
+            <a href="/contact" class="text-kinowhite">
                 <button class="group flex gap-x-4 justify-center items-center text-kinowhite rounded-sm text-sm pl-5 pr-7 bg-kinored py-3 md:px-8 md:text-2xl hover:bg-kinowhite hover:text-kinored duration-200">
                     Contact us
                     <svg class="fill-current h-4 md:hidden" viewBox="0 0 9 16" xmlns="http://www.w3.org/2000/svg">
