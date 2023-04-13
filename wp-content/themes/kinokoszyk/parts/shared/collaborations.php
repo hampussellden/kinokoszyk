@@ -1,6 +1,7 @@
-<section class="font-body w-full flex flex-col gap-6 py-12">
+<section class="font-body w-full flex flex-col gap-6 py-64">
     <h2 class="pl-5 text-5xl font-display md:pl-10 md:text-8xl lg:text-9xl lg:pl-20">Collaborations</h2>
-    <section class="bg-kinowhite px-5 py-7 gap-6 flex flex-col md:px-10 md:gap-12 md:flex-row md:justify-between md:py-10 lg:px-20 items-center">
+    <section
+        class="bg-kinowhite px-5 py-7 gap-6 flex flex-col md:px-10 md:gap-12 md:flex-row md:justify-between md:py-10 lg:px-20 items-center">
         <div class="flex justify-between md:justify-between w-full md:w-1/2 md:gap-12">
             <img src="<?= get_template_directory_uri(); ?>/images/svt.svg" alt="svt logo">
             <img src="<?= get_template_directory_uri(); ?>/images/keds.svg" alt="keds logo">
