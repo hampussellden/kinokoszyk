@@ -32,7 +32,7 @@
             class="lg:mb-4 flex flex-row lg:justify-center space-x- justify-between w-full lg:max-w-screen-md items-baseline">
             <a class="flex flex-row justify-center items-baseline gap-x-[20px] pl-5 sm:pl-10 lg:pl-0"
                 href="<?= site_url(); ?>">
-                <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/Vector.svg"
+                <img class="h-[20px] w-auto lg:h-[36px]" src="<?= get_template_directory_uri(); ?>/images/KKlogo.svg"
                     class="" />
                 <h1 class="font-display text-2xl lg:text-5xl
         lg:font-bold lg:tracking-tight">
