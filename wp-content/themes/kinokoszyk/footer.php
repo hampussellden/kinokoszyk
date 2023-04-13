@@ -48,9 +48,9 @@
         <h4 class="text-kinoblack pl-3 pt-3 pb-6">Collaboration partners</h4>
         <section class="pb-6 flex flex-col gap-6 md:flex-row md:gap-10 md:pl-3">
             <div class="flex justify-around md:flex-row md:gap-10">
-                <img src="../../../wp-admin/images/svt.svg" alt="svt logo">
-                <img src="../../../wp-admin/images/arte.svg" alt="arte logo">
-                <img src="../../../wp-admin/images/sf.svg" alt="Svenska Filminstitutet logo">
+                <img src="<?= get_template_directory_uri(); ?>/images/test.svg" alt="svt logo">
+                <img src="<?= get_template_directory_uri(); ?>/images/ard.svg" alt="ard logo">
+                <img src="<?= get_template_directory_uri(); ?>/images/test3.svg" alt="svt logo">
             </div>
             <div class="flex justify-around md:flex-row md:gap-10">
                 <img src="../../../wp-admin/images/keds.svg" alt="Kreativa Europa Desk Sverige logo">
