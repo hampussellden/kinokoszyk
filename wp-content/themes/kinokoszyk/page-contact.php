@@ -12,8 +12,10 @@ $boSrcset = wp_get_attachment_image_srcset($boImage['ID']);
 $boAlt = $boImage['alt'];
 ?>
 
-
-<section class="w-full flex flex-col items-start px-9 md:px-20 lg:px-40 pt-20 bg-kinoblack text-white pb-64">
+<section class="w-full flex flex-col items-start px-9 md:px-20 lg:px-40 bg-kinoblack text-white pb-64">
+    <div class="pb-20 lg:pt-5">
+        <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+    </div>
     <h2 class="pb-12 text-6xl font-display font-medium md:pb-20 md:text-8xl lg:text-9xl">Contact us</h2>
     <section class="w-full flex flex-col md:items-top md:flex-row md:justify-between">
         <section class="flex flex-col gap-8 pb-14 md:px-2">
