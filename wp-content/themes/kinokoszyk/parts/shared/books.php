@@ -4,7 +4,7 @@ $srcset = wp_get_attachment_image_srcset($image['ID']);
 $alt = $image['alt'];
 ?>
 
-<a href="<?= the_permalink(); ?>" class="flex flex-col justify-start items-start py-8 border-b-2 border-solid border-kinowhite max-w-1/2 sm:max-w-[300px] lg:max-w-[400px] px-1.5 sm:px-3 lg:px-5">
+<a href="<?= the_permalink(); ?>" class="flex flex-col justify-start items-start py-8 border-b-2 border-solid border-kinowhite sm:max-w-[300px] lg:max-w-[400px] px-1.5 sm:px-3 lg:px-5">
     <?php if (get_field('image')) : ?>
         <img class="object-cover aspect-[2/2.5]" alt="<?= $alt; ?>" srcset="<?= $srcset; ?>" sizes="50vw" loading="lazy" />
     <?php endif; ?>
