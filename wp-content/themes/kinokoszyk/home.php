@@ -37,9 +37,9 @@ $firstPost = new WP_Query($args);
 ?>
 
 <main class="w-full">
+    <div class="mx-5 sm:mx-7 lg:mx-[60px]"><?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?></div>
     <h2 class="font-display text-5xl ml-5 mt-8 mb-8 lg:text-8xl lg:ml-10 lg:my-20">News</h2>
     <?php if ($args['paged'] == 1) : ?>
-        <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
         <?php if ($firstPost->have_posts()) : ?>
             <article class="bg-kinowhite mb-16 hidden lg:block relative h-auto">
                 <?php if ($thumbNailImage) : ?>
