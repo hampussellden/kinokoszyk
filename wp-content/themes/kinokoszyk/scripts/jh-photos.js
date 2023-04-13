@@ -12,7 +12,7 @@ photos.forEach((photo) =>
       "fixed",
       "inset-0",
       "bg-black",
-      "bg-opacity-90"
+      "bg-opacity-80"
     );
     const image = photo.cloneNode();
     image.classList.add("max-h-[90%]", "max-w-[90%]");

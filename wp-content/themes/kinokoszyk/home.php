@@ -1,8 +1,31 @@
 <?php get_header(); ?>
 
 <?php
-
 $paged = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+
+$thumbNailImage = get_field('news_thumbnail_image');
+if ($thumbNailImage) {
+    $thumbNailImageID = $thumbNailImage['ID'];
+    $thumbNailSrcset = wp_get_attachment_image_srcset($thumbNailImageID);
+    $thumbNailAlt = $thumbNailImage['alt'];
+}
+
+$image = get_field('news_image');
+if ($image) {
+    $srcset = wp_get_attachment_image_srcset($image['ID']);
+    $alt = $image['alt'];
+}
+
+$pagination = paginate_links(array(
+    'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+    'format' => '?paged=%#%',
+    'current' => $paged,
+    'prev_next' => true,
+    'prev_text' => __('Previous'),
+    'next_text' => __('Next'),
+    'before_page_number' => '<span class="underline">',
+    'after_page_number' => '</span>',
+));
 
 $args = array(
     "posts_per_page" => 1,
@@ -19,13 +42,19 @@ $firstPost = new WP_Query($args);
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
         <?php if ($firstPost->have_posts()) : ?>
             <article class="bg-kinowhite mb-16 hidden lg:block relative h-auto">
-                <?php if (has_post_thumbnail()) : ?>
-                    <img class="w-full max-h-[341px] object-cover" src="<?= esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                <?php if ($thumbNailImage) : ?>
+                    <div>
+                        <img class="w-full max-h-[341px] object-cover" alt="<?= $thumbNailAlt; ?>" srcset="<?= $thumbNailSrcset; ?>" sizes="100vw" loading="lazy" />
+                    </div>
                     <p class="absolute left-4 top-4">Latest news</p>
                 <?php endif; ?>
                 <div class="text-kinodeepblack ml-10 mr-10 mt-10 pb-12">
-                    <h3 class="font-display text-8xl text-kinodeepblack mb-5 mt-4"><?= the_title(); ?></h3>
-                    <p><?= wp_trim_words(get_the_excerpt(), 20, "......"); ?></p>
+                    <a href="<?= the_permalink(); ?>">
+                        <h3 class="font-display text-8xl text-kinodeepblack mb-5 mt-4"><?= the_title(); ?></h3>
+                    </a>
+                    <?php if (get_field('news_description')) : ?>
+                        <p class="mb-5"><?= substr(get_field('news_description'), 0, 132) . '...' ?></p>
+                    <?php endif; ?>
                     <a class="text-kinored font-bold" href="<?= the_permalink(); ?>">Read More ></a>
                 </div>
             </article>
@@ -34,10 +63,18 @@ $firstPost = new WP_Query($args);
 
     <section class="flex flex-col justify-center lg:grid grid-cols-3 gap-6 sm:gap-5 px-5 lg:px-10">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php
+                $thumbNailImage = get_field('news_thumbnail_image');
+                if ($thumbNailImage) {
+                    $thumbNailImageID = $thumbNailImage['ID'];
+                    $thumbNailSrcset = wp_get_attachment_image_srcset($thumbNailImageID);
+                    $thumbNailAlt = $thumbNailImage['alt'];
+                }
+                ?>
                 <article class="flex flex-col bg-kinowhite break-words w-full justify-self-center">
-                    <?php if (has_post_thumbnail()) : ?>
+                    <?php if ($thumbNailImage) : ?>
                         <div>
-                            <img class="max-h-[280px] w-full object-cover" src="<?= esc_url(get_the_post_thumbnail_url(null, 'large')); ?>" alt="<?= esc_attr(get_the_title()); ?>">
+                            <img class="max-h-[280px] w-full object-cover" alt="<?= $thumbNailAlt; ?>" srcset="<?= $thumbNailSrcset; ?>" sizes="100vw" loading="lazy" />
                         </div>
                     <?php else : ?>
                         <div>
@@ -45,11 +82,16 @@ $firstPost = new WP_Query($args);
                         </div>
                     <?php endif; ?>
                     <div class="flex flex-col text-kinodeepblack pr-4 pl-4 pb-10 h-full">
-                        <h3 class="font-display text-2xl text-kinodeepblack mt-4 mb-5 lg:mt-5 lg:text-4xl"><?= the_title(); ?></h3>
-                        <p class="mb-5"><?= wp_trim_words(get_the_excerpt(), 20, "......"); ?></p>
-                        <div class="mt-auto">
-                            <a class="text-kinored font-bold" href="<?= the_permalink(); ?>">Read More ></a>
-                        </div>
+                        <a href="<?= the_permalink(); ?>">
+                            <h3 class="font-display text-2xl text-kinodeepblack mt-4 mb-5 lg:mt-5 lg:text-4xl"><?= the_title(); ?></h3>
+                        </a>
+                        <?php if (get_field('news_description')) : ?>
+                            <p class="mb-5"><?= substr(get_field('news_description'), 0, 132) . '...' ?></p>
+                        <?php endif; ?>
+                        <a class="mt-auto" href="<?= the_permalink(); ?>">
+                            <p class="text-kinored font-bold">Read More >
+                            </p>
+                        </a>
                     </div>
                 </article>
         <?php endwhile;
@@ -57,18 +99,7 @@ $firstPost = new WP_Query($args);
         ?>
     </section>
     <div class="flex justify-center gap-2 mt-10">
-        <?php
-        echo paginate_links(array(
-            'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-            'format' => '?paged=%#%',
-            'current' => $paged,
-            'prev_next' => true,
-            'prev_text' => __('Previous'),
-            'next_text' => __('Next'),
-            'before_page_number' => '<span class="underline">',
-            'after_page_number' => '</span>',
-        ));
-        ?>
+        <?= $pagination ?>
     </div>
 </main>
 
