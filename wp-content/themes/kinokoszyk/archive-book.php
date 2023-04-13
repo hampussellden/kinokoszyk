@@ -29,12 +29,12 @@ $query = new WP_Query($args)
     </section>
 <?php endif; ?>
 <!-- Books listed -->
-<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
+<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[80px]">
     <div class="">
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
     <?php if (have_posts()) : ?>
-        <section class="grid grid-cols-2 sm:grid-cols-3">
+        <section class="grid grid-cols-2 sm:grid-cols-3 pb-5 sm:pb-10">
             <?php while (have_posts()) : the_post() ?>
                 <?php get_template_part('parts/shared/books') ?>
             <?php endwhile; ?>

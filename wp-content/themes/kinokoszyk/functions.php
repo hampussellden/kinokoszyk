@@ -127,7 +127,7 @@ function the_breadcrumb()
 
     global $post;
     $homeLink = get_bloginfo('url');
-    if (is_home() || is_front_page()) {
+    if (is_front_page()) {
         if ($showOnHome == 1) {
             echo '<div id="crumbs"><a class="font-body font-light sm:text-lg lg:text-xl " href="' . $homeLink . '">' . $home . '</a></div>';
         }
@@ -155,6 +155,12 @@ function the_breadcrumb()
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
                 echo '<a class="font-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+                if ($showCurrent == 1) {
+                    echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+                }
+            } elseif (get_post_type() == 'post') {
+                $post_type = 'News';
+                echo '<a class="font-body font-light sm:text-lg lg:text-xl" href="' . $homeLink . '/' . 'News' . '/">' . $post_type . '</a>';
                 if ($showCurrent == 1) {
                     echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
                 }

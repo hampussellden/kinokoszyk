@@ -1,7 +1,7 @@
 <?php wp_footer() ?>
 <?php $links =  wp_get_nav_menu_items('footer-links'); ?>
 <?php $contact =  wp_get_nav_menu_items('footer-contacts'); ?>
-</body>
+
 <footer class="w-full bg-kinodeepblack">
     <section class="pl-5 pt-12 md:flex justify-between items-center md:pl-10 md:py-20 md:pr-12 lg:pl-20 lg:py-24 lg:pr-40">
         <section class="py-10 flex flex-col gap-10 pr-10">
@@ -63,5 +63,6 @@
         <p class="text-xs text-kinowhite">Copyright © 2023 · All Rights Reserved · Kino Koszyk</p>
     </section>
 </footer>
+</body>
 
 </html>

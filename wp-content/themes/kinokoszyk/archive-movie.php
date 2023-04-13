@@ -28,7 +28,7 @@ $query = new WP_Query($args)
         <?php endwhile; ?>
     </section>
 <?php endif; ?>
-<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
+<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[80px]">
     <div class="">
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
