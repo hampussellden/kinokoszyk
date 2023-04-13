@@ -34,7 +34,7 @@ $query = new WP_Query($args)
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
     <?php if (have_posts()) : ?>
-        <section class="grid grid-cols-2 sm:grid-cols-3 pb-5 sm:pb-10">
+        <section class="grid grid-cols-2 sm:grid-cols-3 pb-5 sm:pb-10 lg:pb-20">
             <?php while (have_posts()) : the_post() ?>
                 <?php get_template_part('parts/shared/books') ?>
             <?php endwhile; ?>

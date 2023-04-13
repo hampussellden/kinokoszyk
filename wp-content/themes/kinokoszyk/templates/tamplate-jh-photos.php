@@ -12,12 +12,12 @@ $total = $query->found_posts;
 $aThird = $total / 3;
 ?>
 
-<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px]">
+<main class="flex flex-col mx-3.5 sm:mx-7 lg:mx-[60px] pb-14 sm:pb-16 lg:pb-20">
     <div class="px-1.5 sm:px-3 lg:px-5">
         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
     </div>
     <?php if ($query->have_posts()) : ?>
-        <section id="photos-grid" class="flex flex-col flex-wrap pt-6 sm:pt-10 max-h-[2000px] overflow-hidden">
+        <section id="photos-grid" class="flex flex-col flex-wrap pt-6 sm:pt-10 max-h-[1500px] overflow-hidden">
             <?php while ($query->have_posts()) : $query->the_post() ?>
                 <?php if (get_field('joanna_helander')) :  ?>
                     <?php get_template_part('parts/shared/jh-photos') ?>

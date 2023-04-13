@@ -24,6 +24,15 @@ $args = array(
 );
 $firstPost = new WP_Query($args);
 ?>
+<?php
+$args = array(
+    "posts_per_page" => 9,
+    "orderby" => "date",
+    "order" => "DESC",
+    "paged" => get_query_var('paged') ?: 1
+);
+$posts = new WP_Query($args);
+?>
 
 <main class="w-full">
     <div class="mx-5 sm:mx-7 lg:mx-[80px]"><?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?></div>
@@ -51,7 +60,7 @@ $firstPost = new WP_Query($args);
     <?php endif; ?>
 
     <section class="flex flex-col justify-center lg:grid grid-cols-3 gap-6 sm:gap-5 px-5 lg:px-10">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php if ($posts->have_posts()) : while ($posts->have_posts()) : $posts->the_post(); ?>
                 <?php
                 $thumbNailImage = get_field('news_thumbnail_image');
                 if ($thumbNailImage) {

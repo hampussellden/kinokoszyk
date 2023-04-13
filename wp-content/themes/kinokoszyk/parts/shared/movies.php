@@ -13,5 +13,5 @@ $srcset = wp_get_attachment_image_srcset($image['ID']);
             <?php get_template_part('parts/shared/seemore-btn') ?>
         </a>
     </div>
-    <img class="sm:min-w-[52%] object-cover object-top" srcset="<?= $srcset; ?>" sizes="50vw" />
+    <img class="max-w-[91.64%] sm:min-w-[52%] max-h-[375px] sm:max-h-[335px] lg:max-h-[450px] object-cover object-top" srcset="<?= $srcset; ?>" sizes="50vw" />
 </article>
