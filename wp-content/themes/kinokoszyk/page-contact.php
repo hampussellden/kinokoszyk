@@ -23,13 +23,13 @@ $boAlt = $boImage['alt'];
             <?php foreach ($contact as $item) : ?>
                 <a class="flex items-center" href="<?= $item->url ?>">
                     <?php if (str_contains($item->title, "mail")) : ?>
-                        <img src="../../../wp-admin/images/email.svg" alt="email icon" class="w-6 h-6">
+                        <img src="<?= get_template_directory_uri(); ?>/images/email.svg" alt="email icon" class="w-6 h-6">
                     <?php endif; ?>
                     <?php if (str_contains($item->title, "Tel")) : ?>
-                        <img src="../../../wp-admin/images/phone.svg" alt="phone icon" class="w-6 h-6">
+                        <img src="<?= get_template_directory_uri(); ?>/images/phone.svg" alt="phone icon" class="w-6 h-6">
                     <?php endif; ?>
                     <?php if (str_contains($item->url, "maps")) : ?>
-                        <img src="../../../wp-admin/images/location_svg.svg" alt="location icon" class="w-6 h-6">
+                        <img src="<?= get_template_directory_uri(); ?>/images/location.svg" alt="location icon" class="w-6 h-6">
                     <?php endif; ?>
                     <span class="text-sm pl-4 md:text-base lg:text-xl"><?= $item->title ?></span>
                 </a>
