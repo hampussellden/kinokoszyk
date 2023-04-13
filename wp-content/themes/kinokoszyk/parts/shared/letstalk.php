@@ -1,4 +1,4 @@
-<section class="w-screen font-body">
+<section class="w-full font-body">
     <h2 class="font-display text-white pl-5 py-5 text-5xl md:text-8xl md:pl-10 lg:pl-20 lg:text-9xl">Let's talk</h2>
     <section class="pt-5 pb-8 px-5 bg-kinogrey md:px-10 md:pt-10 md:pb-14 lg:py-20 lg:pl-20">
         <div class="pb-5 gap-7 lg:pb-10">
