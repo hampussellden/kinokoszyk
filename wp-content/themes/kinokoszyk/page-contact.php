@@ -23,7 +23,7 @@ $boAlt = $boImage['alt'];
                     <?php if (str_contains($item->title, "mail")) : ?>
                         <img src="../../../wp-admin/images/email.svg" alt="email icon" class="w-6 h-6">
                     <?php endif; ?>
-                    <?php if (str_contains($item->title, "Tel")) : ?>
+                    <?php if (str_contains($item->title, "tel")) : ?>
                         <img src="../../../wp-admin/images/phone.svg" alt="phone icon" class="w-6 h-6">
                     <?php endif; ?>
                     <?php if (str_contains($item->url, "maps")) : ?>
