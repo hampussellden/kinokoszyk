@@ -1,4 +1,4 @@
-<?php get_header('jh'); ?>
+<?php get_header(); ?>
 
 <?php $contact =  wp_get_nav_menu_items('footer-contacts'); ?>
 
