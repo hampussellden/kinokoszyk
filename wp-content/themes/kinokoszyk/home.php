@@ -16,17 +16,6 @@ if ($image) {
     $alt = $image['alt'];
 }
 
-$pagination = paginate_links(array(
-    'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-    'format' => '?paged=%#%',
-    'current' => $paged,
-    'prev_next' => true,
-    'prev_text' => __('Previous'),
-    'next_text' => __('Next'),
-    'before_page_number' => '<span class="underline">',
-    'after_page_number' => '</span>',
-));
-
 $args = array(
     "posts_per_page" => 1,
     "orderby" => "date",
@@ -37,8 +26,8 @@ $firstPost = new WP_Query($args);
 ?>
 
 <main class="w-full">
-    <div class="mx-5 sm:mx-7 lg:mx-[60px]"><?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?></div>
-    <h2 class="font-display text-5xl ml-5 mt-8 mb-8 lg:text-8xl lg:ml-10 lg:my-20">News</h2>
+    <div class="mx-5 sm:mx-7 lg:mx-[80px]"><?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?></div>
+    <h2 class="font-display text-5xl ml-5 mt-8 mb-8 lg:text-8xl lg:ml-[80px] lg:my-20">News</h2>
     <?php if ($args['paged'] == 1) : ?>
         <?php if ($firstPost->have_posts()) : ?>
             <article class="bg-kinowhite mb-16 hidden lg:block relative h-auto">
@@ -98,8 +87,19 @@ $firstPost = new WP_Query($args);
         endif;
         ?>
     </section>
-    <div class="flex justify-center gap-2 mt-10">
-        <?= $pagination ?>
+    <div class="flex justify-center gap-2 mt-10 mb-10 text-xl">
+        <?php
+
+        $currentPage = max(1, get_query_var('paged'));
+
+        echo paginate_links(array(
+            'base' => get_pagenum_link(1) . '%_%',
+            'format' => '/page/%#%',
+            'current' => $currentPage,
+            'prev_text' => __('<span class="font-semibold">Prev</span>'),
+            'next_text' => __('<span class="font-semibold">Next</span>'),
+        ));
+        ?>
     </div>
 </main>
 
