@@ -95,7 +95,7 @@ if ($queryHero->have_posts()) : ?>
 
             </div>
 
-            <section class="mx-3.5 sm:mx-7 lg:mx-[60px]">
+            <section class="pt-[110px] lg:pt-[168px]">
                 <article class="relative flex flex-col gap-[18px] border-b pb-[31px] pt-[48px] h-auto w-auto lg:flex-row lg:justify-center lg:items-center lg:gap-11 lg:border-t lg:pt-[60px] lg:pb-[89px] lg:pt-[80px]">
                     <div class="lg:flex lg:flex-col lg:h-[391px] lg:w-full lg:justify-center lg:gap-10">
                         <div class="flex flex-col gap-4 lg:gap-5">
