@@ -39,7 +39,7 @@ $queryHero = new WP_Query($argsHero);
 if ($queryHero->have_posts()) : ?>
     <div class="relative inline-block flex flex-col items-start max-h-screen">
         <?php while ($queryHero->have_posts()) : $queryHero->the_post(); ?>
-            <div class="block min-h-[55vw] w-full "><?= the_content(); ?></div>
+            <div class="blockmin-h-[55vw] w-full "><?= the_content(); ?></div>
         <?php endwhile; ?>
 
         <h2 class="absolute font-display 
